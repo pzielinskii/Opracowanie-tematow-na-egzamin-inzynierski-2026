@@ -24,13 +24,13 @@ Często algroytmy bardziej optymalne czasowo są bardziej złożone pamięciowo 
 
 Złożoności alogrytmów wyraża się za pomocą notacji asymptotycznych. Stosuje się je zarówno do czasu jak i pamięci.
 
-Notacja duże O -> O(f(n)) (pesymistyczne szacowanie)
+Notacja duże O &rarr; O(f(n)) (pesymistyczne szacowanie)
 : Określa ograniczenie funkcji z góry. Asymptotycznie funkcja nie większa niż, algorytm nie działa wolnej niż.
 
-Notacja duże Omega -> Ω(f(n)) (optymistyczne szacowanie)
+Notacja duże Omega &rarr; Ω(f(n)) (optymistyczne szacowanie)
 : Określa ograniczenie funckji z dołu. Asymtotycznie nie mniejsza, algorytm działa przynajmniej tak długo
 
-Notacja duże Theta -> Θ(f(n))
+Notacja duże Theta &rarr; Θ(f(n))
 : Określa ograniczenie ścisłe, dolne i górne. Dokładne oszacowanie złożoności algorytmu.
 
 Najczęściej używaną notacją jest duże O ze względu na bezpieczeństwo skalowaności. Zakłada najgorszy przypadek wykoania, więc jest w stanie dokładnie określić czego możemy się spodziewać po algorytmie mimo jednostronnego ogarniczenia funkcji.
@@ -58,8 +58,8 @@ Złożoności posortowane od najszybszej
 
 Struktura danych to sposób organizacji i przechowywania danych w pamięci komputera, umożliwiający efektywne wykonywanie operacji na tych danych. Struktury danych są zwykle implementowane przy użyciu typów prostych.
 
-Typ prymitywny (prosty) -> przechowuje jedną wartość.
-Struktura danych -> organizuje wiele wartości oraz definiuje operacje, które można na nich wykonywać.
+Typ prymitywny (prosty) &rarr; przechowuje jedną wartość.
+Struktura danych &rarr; organizuje wiele wartości oraz definiuje operacje, które można na nich wykonywać.
 
 UUżycie odpowiedniej struktury danych i algorytmu umożliwia optymalizację czasową, i pamięciową. Każda struktura danych ma swoje zalety i wady, a jej wybór ma kluczowe znaczenie dla wydajności algorytmów.
 
@@ -191,7 +191,7 @@ Algorytmy bazujące na tablicach asocjacyjnych:
 
 ### Co to jest programowanie obiektowe?
 
-Programowanie obiektowe (OOP - object orientet programing) to paradygmat programowania, który organizuje kod wokół obiektów, które łączą dane i zachowania (metody) operujące na tych danych. Kluczowa idea to stan (dane) + zachowanie (metody) są połączone w jedną jednostkę — obiekt. Zawierają się też w tym klasy które są abstrakcyjnym opisem / szablonem tworzenia obiektów i zbiorem ich zachowań. Klasa zawiera też ewentualne realcje z innymi klasami.
+Programowanie obiektowe (OOP - object orientet programing) to paradygmat programowania, który organizuje kod wokół obiektów, które łączą dane i zachowania (metody) operujące na tych danych. Kluczowa idea to stan (dane) + zachowanie (metody) są połączone w jedną jednostkę - obiekt. Zawierają się też w tym klasy które są abstrakcyjnym opisem / szablonem tworzenia obiektów i zbiorem ich zachowań. Klasa zawiera też ewentualne realcje z innymi klasami.
 
 #### Filary programowania obiektowego
 
@@ -388,7 +388,7 @@ Wiadomość zaszyfrowana kluczem publicznym może być odszyfrowana tylko za pom
 
 ### Definicja programowania obiektowego
 
-Programowanie obiektowe (OOP - object orientet programing) to paradygmat programowania, który organizuje kod wokół obiektów, które łączą dane i zachowania (metody) operujące na tych danych. Kluczowa idea to stan (dane) + zachowanie (metody) są połączone w jedną jednostkę — obiekt. Zawierają się też w tym klasy które są abstrakcyjnym opisem / szablonem tworzenia obiektów i zbiorem ich zachowań. Klasa zawiera też ewentualne realcje z innymi klasami.
+Programowanie obiektowe (OOP - object orientet programing) to paradygmat programowania, który organizuje kod wokół obiektów, które łączą dane i zachowania (metody) operujące na tych danych. Kluczowa idea to stan (dane) + zachowanie (metody) są połączone w jedną jednostkę - obiekt. Zawierają się też w tym klasy które są abstrakcyjnym opisem / szablonem tworzenia obiektów i zbiorem ich zachowań. Klasa zawiera też ewentualne realcje z innymi klasami.
 
 #### Filary OOP
 
@@ -454,3 +454,97 @@ Charakterystyka:
 - brak kontroli dostępu (konwecja _nazwa jednak to nic nie blokuje)
 
 ## 8. Cykle życia oprogramowania (modele wytwarzania oprogramowania)
+
+### Co to jest cykl życia oprogramowania?
+
+Cykl życia oprogramowania (SDLC = Software Development Life Cycle) - to strukturalne podejście do tworzenia oprogramowania, obejmujące wszystkie etapy od początkowej koncepcji aż po wdrożenie i utrzymanie systemu informatycznego. Celem modeli wytwarzania oprogramowania jest uporządkowanie procesu, redukcja ryzyka, poprawa jakości końcowego produktu.
+
+#### Podstawowe etapy cyklu życia oprogramowania
+
+1. Analiza wymagań (Requirements) - określenie potrzeb, wymagań oraz efektów działania systemu
+2. Projektowanie (Design) - architektura systemu, projekt wstępny
+3. Implementacja/Tworzenie (Development) - na podstawie projektu oraz wymagań tworzenie systemu
+4. Testowanie (Testing) - weryfikacja zgodności z wymaganiami oraz projektem, sprawdzenie poprawności działania
+5. Wdrożenie (Deployment) - uruchomienie systemu w środowisku docelowym
+6. Utrzymanie i rozwój (Maintenance) - utrzymanie systemu w stanie działjącym i wprowadzanie poprawek
+
+### Modele wytwarzania oprogramowania
+
+#### Model kaskadowy (waterfall)
+
+Jest modelem liniowym gdzie każdy etap musi być zakończony przed rozpoczęciem następnego. Jest prosty i czytelny, łatwy do zarządzania i zapewnia dobrą dokumentacje. Sprawdza się w sytuacjach, kiedy wymagania sytemowe są stałe i jasno ustalone. Nie pozwala na powrót do wcześniejszych etapów, nie zapewnia elastyczności (jeżeli coś zostało ustalone tak będzie zrobione), błędy są wykrywane na późnym etapie życia, a niepoprawne założenia mogą zostać odkryte dopiero przy testach.
+
+Prosta wizualizacja:
+Requirements &rarr; Design &rarr; Development &rarr; Testing &rarr; Deployment &rarr; Maintenance
+
+#### Model V (V-Model)
+
+Jest to model rozwijający klasyczne podejście kaskadowe, naprawiając jego błędy związane z brakiem testów we wczesnych etapach. W tym modelu każdy etap projektowy ma odpowiadający mu etap testowy, dzięki czemu niweluje błędy przy założeniach czy projektowaniu systemu. Sprawdza się w systemach wymagających wysokiej niezawodności, przy systemach wbudowanych czy projektach przemysłowych ze względu na zwiększenie zaangażowania testerskiego.
+
+Przykładowe działanie modelu etapami można opisać następująco.
+
+Rozpoczynając pierwszą fazę czyli analizę wymagań po stonie testerskiej rozpoczynamy liczne przeglądy oraz analizy tych wymagań i budujemy na podstawie tego testy akceptacyjne.
+
+Przechodząc do kolejnej fazy projektu systemu zespół ustala jak system będzie wyglądał jego struktura i jak będzie działał, strona testerska przeprowadza przeglądy i analizy, aby jak najnszybciej wyłapać błędy oraz buduje przypadki testowe do testów systemowych.
+
+Następie w fazie projektu architektury zespół ustala techniczne oraz finansowe potrzeby, podział systemu na moduły i funkcje, a strona testerska przeprowadza przeglądy, analizy i buduje przypadki testowe do testów intergracyjnych.
+
+W kolejnej fazie projektowania modułów zespół ustala wewnętrzny projekt dla każdego modulu, a strona testerska przeprowadza przeglądy, analizy i buduje testy jednostkowe.
+
+W ostatniej fazie programistycznej następuje zbudowanie systemu zgodnie z wymogami oraz dokumentacją stworzoną w poprzednich etapach.
+
+Następnie po zakończeniu tej fazy zespół testerski rozpoczyna testy od najmniejszych kawałków, zaczynając od testów modułowych/jednostkowych, następie testy integracyjne, testy systemowe a na koniec na środowisku docelowym przeprowadzane są testy akceptacyjne.
+
+#### Model iteracyjny / przyrostowy
+
+Jest to model bazujący na cyklach, iteracjach. Każda iteracja powinna dostarczać działjącą część systemu. System dzięki temu powstaje stopniowo. Zwiększa to jednak złożoność planowania i zarządzania takim projektem. Jednak umożliwia dostosowywanie się do zmiennych lub niejasnych wymagań systemowych, zapewnia wczesne testowanie każdej iteracji i zmniejsza ryzyko projektowe.
+
+Wizulalizacja działania:
+Przyrost 1: Plan &rarr; Design &rarr; Develop &rarr; Test &rarr; Działający inkrement / przyrost v1
+&darr;
+Przyrost 2: Plan &rarr; Design &rarr; Develop &rarr; Test &rarr; Działający inkrement / przyrost v2
+&darr;
+...Konytuacja aż system zostanie ukończony...
+&darr;
+Produkt końcowy - w pełni działjący system spełniający wszystkie wcześniejsze wymagania
+
+#### Model zwinny (agile, scrum)
+
+Model ten opiera się na krótkich iteracjach nazywanych sprintami, najczęsciej od tygodnia do czterech długosci. Zakłda częste dostarczanie działajacych elementów systemu i stałą współpracę z klientem. Daje dużą elastyczność, pozwala reagować na zmiany oraz dopasowywuje się do użytkownika końcowego. Załozenia nie muszą być znane od początku. Jednak przez to wymaga dużego zaangażowania klienta w budowe systemu, średnio skaluje się przy większych zespołach i nie jest w stanie podać jednoznaczenego harmonogramu prac. Jego zastosowania to projekty wymagające dużej elastyczności i szybkiego dostarczania wartości o zmiennych lub nieprecyzyjnych wymaganiach.
+
+Kluczowe elementy tego modeulu (struktura 3-5-3):
+
+Role (Scrum Team):
+
+- Product Owner (Właściciel Produktu): Reprezentuje interesy klienta, definiuje wizję i zarządza priorytetami w Product Backlogu.
+- Scrum Master: Wspiera zespół, dba o przestrzeganie zasad Scruma i usuwa przeszkody.
+- Zespół programistyczny (Developers): Interdyscyplinarna grupa osób realizująca zadania w ramach sprintu.
+
+Zdarzenia (Events - spotkania):
+
+- Sprint: Iteracja (1-4 tygodnie), podczas której powstaje przyrost produktu.
+- Sprint Planning (Planowanie): Określenie celów i zadań na nadchodzący sprint.
+- Daily Scrum (Codzienne spotkanie): 15-minutowe spotkanie synchronizujące pracę zespołu.
+- Sprint Review (Przegląd): Prezentacja wypracowanego przyrostu interesariuszom.
+- Sprint Retrospective (Retrospektywa): Analiza minionego sprintu w celu ulepszenia procesu pracy.
+
+Artefakty (Artifacts - efekty pracy):
+
+- Product Backlog: Lista zadań i funkcji, uporządkowana przez Product Ownera.
+- Sprint Backlog: Zbiór zadań wybranych na dany sprint.
+- Increment (Przyrost): Gotowa, działająca część produktu po zakończeniu sprintu.
+
+### Współczesne podejście
+
+Obecniej najczęsciej stosowaną metodyką jest model zwinny, rozszerzony o podejście DevOps (itegracja dev - development [programowanie] z ops - operations [wdrażaniem]) dającą możliwości wprowadzenia systemu typu CI/CD - Continous Integration / Continous Deployment, umożliwiający ciągłą integracje zmian oraz wdrażanie ich.
+
+### Porównanie modeli
+
+| Model      | Elastyczność  | Ryzyko                        | Dokumentacja                   |
+| ---------- | ------------- | ----------------------------- | ------------------------------ |
+| Kaskadowy  | niska         | wysokie przy zmianach założeń | duża                           |
+| V-Model    | niska         | kontrolowane                  | bardzo duża                    |
+| Iteracyjny | średnia       | mniejsze                      | umiarkowana                    |
+| Agile      | bardzo wysoka | niskie mimo zmian             | mniejsza (nie wpisana w model) |
+
+## 9. Zasady modelowania dla konstrukcji relacyjnych baz danych
