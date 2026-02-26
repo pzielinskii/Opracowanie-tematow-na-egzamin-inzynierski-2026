@@ -41,16 +41,16 @@ Najprościej mówiąc, jest to rodzaj funckji otrzymany po wyznaczeniu liczby op
 
 Złożoności posortowane od najszybszej
 
-|Klasa      |Opis złożoności      |Przykładowy algorytm w klasie                                  |
-|-----------|---------------------|---------------------------------------------------------------|
-|O(1)       |Stała                |Dostęp do elementu tablicy                                     |
-|O(log~n~)  |Logarytmiczna        |Wyszukiwanie binarne [^1]                                      |
-|O(n)       |Liniowa              |Przeszukanie tablicy element po elemencie                      |
-|O(n*log~n~)|Liniowo-logarytmiczna|Algorytmy typu dziel i zwyciężaj (merge sort)                  |
-|O(n^2^)    |Kwadratowa           |Bubble sort (wynika z zagnieżdżenia dwóch pętli)               |
-|O(n^3^)    |Sześcienna           |Mnożenie macieży 2-wymiarowych                                 |
-|O(2^n^)    |Wykładnicza          |Problem wież Hanoi (przeniesienie n krążków to 2^n^ - 1 ruchów)|
-|O(n!)      |Silnia               |Generowanie permutacji zbioru                                  |
+|Klasa           |Opis złożoności      |Przykładowy algorytm w klasie                                  |
+|-----------     |---------------------|---------------------------------------------------------------|
+|O(1)            |Stała                |Dostęp do elementu tablicy                                     |
+|$$O(log_{n})$$  |Logarytmiczna        |Wyszukiwanie binarne [^1]                                      |
+|O(n)            |Liniowa              |Przeszukanie tablicy element po elemencie                      |
+|O(n*log~n~)     |Liniowo-logarytmiczna|Algorytmy typu dziel i zwyciężaj (merge sort)                  |
+|O(n^2^)         |Kwadratowa           |Bubble sort (wynika z zagnieżdżenia dwóch pętli)               |
+|O(n^3^)         |Sześcienna           |Mnożenie macieży 2-wymiarowych                                 |
+|O(2^n^)         |Wykładnicza          |Problem wież Hanoi (przeniesienie n krążków to 2^n^ - 1 ruchów)|
+|O(n!)           |Silnia               |Generowanie permutacji zbioru                                  |
 
 [^1]: Znalezienie konktretnego elementu w posortowanej tablicy. Przykładowo sprawdzanie środkowego elementu tablicy następnie szukanie w jednej z połówek i tak do uzyskania szukanego elementu.
 
