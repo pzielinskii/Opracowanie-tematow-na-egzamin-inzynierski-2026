@@ -43,14 +43,14 @@ Złożoności posortowane od najszybszej
 
 |Klasa           |Opis złożoności      |Przykładowy algorytm w klasie                                  |
 |-----------     |---------------------|---------------------------------------------------------------|
-|O(1)            |Stała                |Dostęp do elementu tablicy                                     |
+|$$O(1)$$        |Stała                |Dostęp do elementu tablicy                                     |
 |$$O(log_{n})$$  |Logarytmiczna        |Wyszukiwanie binarne [^1]                                      |
 |O(n)            |Liniowa              |Przeszukanie tablicy element po elemencie                      |
-|O(n*log~n~)     |Liniowo-logarytmiczna|Algorytmy typu dziel i zwyciężaj (merge sort)                  |
-|O(n^2^)         |Kwadratowa           |Bubble sort (wynika z zagnieżdżenia dwóch pętli)               |
-|O(n^3^)         |Sześcienna           |Mnożenie macieży 2-wymiarowych                                 |
-|O(2^n^)         |Wykładnicza          |Problem wież Hanoi (przeniesienie n krążków to 2^n^ - 1 ruchów)|
-|O(n!)           |Silnia               |Generowanie permutacji zbioru                                  |
+|$$O(nlog_{n})$$ |Liniowo-logarytmiczna|Algorytmy typu dziel i zwyciężaj (merge sort)                  |
+|$$O(n^{2})$$    |Kwadratowa           |Bubble sort (wynika z zagnieżdżenia dwóch pętli)               |
+|$$O(n^{3})$$    |Sześcienna           |Mnożenie macieży 2-wymiarowych                                 |
+|$$O(2^{n})$$    |Wykładnicza          |Problem wież Hanoi (przeniesienie n krążków to 2^n^ - 1 ruchów)|
+|$$O(n!)$$       |Silnia               |Generowanie permutacji zbioru                                  |
 
 [^1]: Znalezienie konktretnego elementu w posortowanej tablicy. Przykładowo sprawdzanie środkowego elementu tablicy następnie szukanie w jednej z połówek i tak do uzyskania szukanego elementu.
 
@@ -73,20 +73,20 @@ Podstawowwe operacje na tablicach:
 
 | Operacja                                   | Złożoność czasowa|
 | ------------------------------------------ | ---------------- |
-| Dostęp po indeksie                         | O(1)             |
-| Wyszukiwanie liniowe                       | O(n)             |
-| Wyszukiwanie binarne (posortowana)         | O(log~n~)        |
-| Wstawienie                                 | O(n)             |
-| Usuwanie                                   | O(n)             |
+| Dostęp po indeksie                         | $$O(1)$$         |
+| Wyszukiwanie liniowe                       | $$O(n)$$         |
+| Wyszukiwanie binarne (posortowana)         | $$O(log_{n})$$   |
+| Wstawienie                                 | $$O(n)$$         |
+| Usuwanie                                   | $$O(n)$$         |
 
 Algorytmy sortowania tablic:
 
-| Algorytm                            | Złożoność czasowa      | Pamięciowa     |
-| ----------------------------------- | ------------           |-------------   |
-| Bubble                              | O(n^2^)                | O(1)           |
-| Merge Sort                          | O(n * log~n~)          | O(n)           |
-| Quick Sort                          | O(n * log~n~) (średnio)| O(log~n~) (śr.)|
-| Heap Sort                           | O(n * log~n~)          | O(1)           |
+| Algorytm                            | Złożoność czasowa        | Pamięciowa     |
+| ----------------------------------- | ------------             |-------------   |
+| Bubble                              | $$O(n^{2})$$             | $$O(1)$$       |
+| Merge Sort                          | $$O(nlog_{n})$$          | $$O(n)$$       |
+| Quick Sort                          | $$O(nlog_{n})$$          | $$O(log_{n})$$ |
+| Heap Sort                           | $$O(nlog_{n})$$          | $$O(1)$$       |
 
 #### Lista powiązana
 
@@ -96,18 +96,18 @@ Podstawowwe operacje na listach powiązanych:
 
 | Operacja                                   | Złożoność czasowa|
 | ------------------------------------------ | ---------------- |
-| Dostęp                                     | O(n)             |
-| Wstawienie na początek                     | O(1)             |
-| Wstawienie między znane węzły              | O(1)             |
-| Usuwanie                                   | O(n)             |
+| Dostęp                                     | $$O(n)$$         |
+| Wstawienie na początek                     | $$O(1)$$         |
+| Wstawienie między znane węzły              | $$O(1)$$         |
+| Usuwanie                                   | $$O(n)$$         |
 
 Algorytmy sortowania list powiązanych:
 
 | Algorytm                            | Złożoność czasowa    | Pamięciowa     |
 | ----------------------------------- | ------------         |-------------   |
-| Odwracanie listy                    | O(n)                 | O(1)           |
-| Merge Sort                          | O(n * log~n~)        | O(log~n~)      |
-| Znajdowanie środka listy            | O(n)                 | O(1)           |
+| Odwracanie listy                    | $$O(n)$$             | $$O(1)$$       |
+| Merge Sort                          | $$O(nlog_{n})$$      | $$O(log_{n})$$ |
+| Znajdowanie środka listy            | $$O(n)$$             | $$O(1)$$       |
 
 #### Stos
 
@@ -117,16 +117,16 @@ Podstawowwe operacje na stosie:
 
 | Operacja                                   | Złożoność czasowa|
 | ------------------------------------------ | ---------------- |
-| Dodanie                                    | O(1)             |
-| Podgląd ostatniego elementu                | O(1)             |
-| Usuwanie                                   | O(1)             |
+| Dodanie                                    | $$O(1)$$         |
+| Podgląd ostatniego elementu                | $$O(1)$$         |
+| Usuwanie                                   | $$O(1)$$         |
 
 Algorytmy wykorzystujące stos (V - vertices [wierzchołki w grafie], E - edges [krawędzie]):
 
 | Algorytm                            | Złożoność czasowa    | Pamięciowa     |
 | ----------------------------------- | ------------         |-------------   |
-| Sprawdzanie poprawności nawiasów    | O(n)                 | O(n)           |
-| Przeszukiwanie grafu w głąb (DFS)   | O(V * E)             | O(V)           |
+| Sprawdzanie poprawności nawiasów    | $$O(n)$$             | $$O(n)$$       |
+| Przeszukiwanie grafu w głąb (DFS)   | $$O(V * E)$$         | $$O(V)$$       |
 
 #### Kolejka
 
@@ -136,15 +136,15 @@ Podstawowwe operacje na kolejce:
 
 | Operacja                                   | Złożoność czasowa|
 | ------------------------------------------ | ---------------- |
-| Dodanie na koniec                          | O(1)             |
-| Usuwanie usuwanie z początku               | O(1)             |
-| Przeszukanie całej                         | O(n)             |
+| Dodanie na koniec                          | $$O(1)$$         |
+| Usuwanie usuwanie z początku               | $$O(1)$$         |
+| Przeszukanie całej                         | $$O(n)$$         |
 
 Algorytmy wykorzystujące kolejkę:
 
 | Algorytm                            | Złożoność czasowa | Pamięciowa     |
 | ----------------------------------- | ----------------- |--------------- |
-| Przeszukiwanie grafu w szerz (BFS)  | O(V * E)          | O(V)           |
+| Przeszukiwanie grafu w szerz (BFS)  | $$O(V * E)$$      | $$O(V)$$       |
 
 #### Graf
 
@@ -154,18 +154,18 @@ Podstawowwe operacje na grafie zależnie od implemetacj (złożoność czasowa):
 
 | Reprezentacja      | Dodawanie wierzchołka | Dodawanie krawędzi | Sprawdzanie istnienia krawędzi |
 | ------------------ | --------------------- | ------------------ | ------------------------------ |
-| Macierz sąsiedztwa | O(1)                  | O(1)               | O(1)                           |
-| Lista sąsiedztwa   | O(1)                  | O(1)               | O(deg(V))                      |
-| Lista krawędzi     | O(1)                  | O(1)               | O(E)                           |
+| Macierz sąsiedztwa | $$O(1)$$              | $$O(1)$$           | $$O(1)$$                       |
+| Lista sąsiedztwa   | $$O(1)$$              | $$O(1)$$           | $$O(deg(V))$$                  |
+| Lista krawędzi     | $$O(1)$$              | $$O(1)$$           | $$O(E)$$                       |
 
 Algorytmy bazujące na grafach:
 
-| Algorytm                    | Złożoność czasowa               | Pamięciowa |
-| --------------------------- | -----------------               | ---------- |
-| Przeszukiwanie wszerz (BFS) | O(V + E)                        | O(V)       |
-| Przeszukiwanie w głąb (DFS) | O(V + E)                        | O(V)       |
-| A*                          | O(E * log~V~)                   | O(V)       |
-| Dijkstra                    | O((V + E) * log~V~) lub O(V^2^) | O(V)       |
+| Algorytm                    | Złożoność czasowa                  | Pamięciowa |
+| --------------------------- | -----------------                  | ---------- |
+| Przeszukiwanie wszerz (BFS) | $$O(V + E)$$                       | $$O(V)$$   |
+| Przeszukiwanie w głąb (DFS) | $$O(V + E)$$                       | $$O(V)$$   |
+| A*                          | $$O(E * log_{V})$$                 | $$O(V)$$   |
+| Dijkstra                    | $$O((V + E)log_{V})$$ $$O(V^{2})$$ | $$O(V)$$   |
 
 #### Tablicje asocjacyjne (hash table/map) (słowniki)
 
@@ -173,19 +173,19 @@ Struktura przechowująca pary klucz–wartość, wykorzystująca funkcję haszuj
 
 Podstawowwe operacje na tablicy asocjacynej:
 
-| Operacja                                   | Złożoność czasowa|
-| ------------------------------------------ | ---------------- |
-| Dostęp po kluczu                           | O(1)             |
-| Wstawienie                                 | O(1)             |
-| Usuwanie                                   | O(1)             |
-| Ponowne hashowanie                         | O(n)             |
+| Operacja                                   | Złożoność czasowa    |
+| ------------------------------------------ | ----------------     |
+| Dostęp po kluczu                           | $$O(1)$$             |
+| Wstawienie                                 | $$O(1)$$             |
+| Usuwanie                                   | $$O(1)$$             |
+| Ponowne hashowanie                         | $$O(n)$$             |
 
 Algorytmy bazujące na tablicach asocjacyjnych:
 
 | Algorytm                                 | Złożoność czasowa  | Pamięciowa     |
 | -----------------------------------      | -----------------  |--------------- |
-| Grupowanie anagramów (k - długość słowa) | O(n k log~k~)      | O(n)           |
-| Dwa elementy których suma = X            | O(n)               | O(n)           |
+| Grupowanie anagramów (k - długość słowa) | $$O(nk*log_{k})$$  | $$O(n)$$       |
+| Dwa elementy których suma = X            | $$O(n)$$           | $$O(n)$$       |
 
 ## 3. Nowoczesne platformy programowania obiektowego
 
@@ -226,7 +226,7 @@ Nowoczesne platformy programowania obiektowego to kompleksowe środowiska progra
 
 Jest to platforma programowania obiektowego rozwiajana przez frimę Microsoft, umożliwia tworzenie różnych aplikacji w kilku wspieranych językach. Działa na wspólnym środowisku uruchomieniowym CLR - common language runtime. Posiada automatyczne zarządzanie pamięcią, pełne wsparcie dla OOP i wieloplatformowość.
 
-Platforma ta umożliwia pisanie w językach takich jak VB.NET, C# oraz F#. Jej nowoczesność pozwala na pisanie kodu zawierającego cechy również funkcyjne dzięki językowi F#. Jej głównym językiem jest C# wszechstronnie używany do tworzenia różnej maści programów od aplikacji webowych przez desktopowe, mobline a również gry komputerowe ze wsparciem języka Unity.
+Platforma ta umożliwia pisanie w językach takich jak VB&period;NET, C# oraz F#. Jej nowoczesność pozwala na pisanie kodu zawierającego cechy również funkcyjne dzięki językowi F#. Jej głównym językiem jest C# wszechstronnie używany do tworzenia różnej maści programów od aplikacji webowych przez desktopowe, mobline a również gry komputerowe ze wsparciem języka Unity.
 
 Platforma posia szeroką bibliotekę klas podstawowych umożliwającą interakcje z systemem operacyjnym, sprzętem wejscia-wyjścia, siecią, współbierznością czy bazą danych.
 
@@ -587,7 +587,7 @@ W ostatniej fazie programistycznej następuje zbudowanie systemu zgodnie z wymog
 
 Następnie po zakończeniu tej fazy zespół testerski rozpoczyna testy od najmniejszych kawałków, zaczynając od testów modułowych/jednostkowych, następie testy integracyjne, testy systemowe a na koniec na środowisku docelowym przeprowadzane są testy akceptacyjne.
 
-#### Skrócone zaledy i wady tego modelu
+#### Zaledy i wady tego modelu
 
 ##### Zalety
 
