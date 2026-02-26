@@ -548,3 +548,86 @@ Obecniej najczęsciej stosowaną metodyką jest model zwinny, rozszerzony o pode
 | Agile      | bardzo wysoka | niskie mimo zmian             | mniejsza (nie wpisana w model) |
 
 ## 9. Zasady modelowania dla konstrukcji relacyjnych baz danych
+
+### Co to jest relacyjna baza danych?
+
+Relacyjna baza danych to system przechowywania danych oparty na modelu relacyjnym, w którym dane są organizowane w postaci tabel składających się z wierszy i kolumn, a relacje między danymi realizowane są za pomocą kluczy.
+
+Kluczowe cechy takiej bazy:
+
+1. Dane przechowywane w tabelach
+2. Jednoznaczna identyfikacja rekordów
+3. Powiązania między tabelami
+4. Operacje na danych wykonywane w języku zapytań (SQL)
+
+Przykłady systemów zarządzania takimi bazami danych (SZBZ - System Zarządzana Bazą Danych, DBMS - Database Managment System):
+
+- MySQL
+- PostgreSQL
+- Microsoft SQL Server (MSSQL)
+- SQLite
+
+## 10. Opis wybranej metodyki wytwarzania oprogramowania
+
+### V-Model (model V)
+
+Jest to model rozwijający klasyczne podejście kaskadowe, naprawiając jego błędy związane z brakiem testów we wczesnych etapach. W tym modelu każdy etap projektowy ma odpowiadający mu etap testowy, dzięki czemu niweluje błędy przy założeniach czy projektowaniu systemu. Sprawdza się w systemach wymagających wysokiej niezawodności, przy systemach wbudowanych czy projektach przemysłowych ze względu na zwiększenie zaangażowania testerskiego oraz dokumentacje na każdym etapie.
+
+Przykładowe działanie modelu etapami można opisać następująco.
+
+Rozpoczynając pierwszą fazę czyli analizę wymagań po stonie testerskiej rozpoczynamy liczne przeglądy oraz analizy tych wymagań i budujemy na podstawie tego testy akceptacyjne.
+
+Przechodząc do kolejnej fazy projektu systemu zespół ustala jak system będzie wyglądał jego struktura i jak będzie działał, strona testerska przeprowadza przeglądy i analizy, aby jak najnszybciej wyłapać błędy oraz buduje przypadki testowe do testów systemowych.
+
+Następie w fazie projektu architektury zespół ustala techniczne oraz finansowe potrzeby, podział systemu na moduły i funkcje, a strona testerska przeprowadza przeglądy, analizy i buduje przypadki testowe do testów intergracyjnych.
+
+W kolejnej fazie projektowania modułów zespół ustala wewnętrzny projekt dla każdego modulu, a strona testerska przeprowadza przeglądy, analizy i buduje testy jednostkowe.
+
+W ostatniej fazie programistycznej następuje zbudowanie systemu zgodnie z wymogami oraz dokumentacją stworzoną w poprzednich etapach.
+
+Następnie po zakończeniu tej fazy zespół testerski rozpoczyna testy od najmniejszych kawałków, zaczynając od testów modułowych/jednostkowych, następie testy integracyjne, testy systemowe a na koniec na środowisku docelowym przeprowadzane są testy akceptacyjne.
+
+#### Skrócone zaledy i wady tego modelu
+
+##### Zalety
+
+- dokumentacja na każdym etapie życia produktu
+- łatwy w zarządzaniu, łatwe ustalenie jasnego harmonogramu prac
+- wysoka dyscyplina działania, każdy z etapów wymaga zakończenia poprzedniego
+- szybkie oraz dokładne testowanie na każdym etapnie, zaczynające się już od pierwszego dokumentu
+
+##### Wady
+
+- liniowość modelu znacząco utrudnia elastyczność, zmiana założeń ustalonych na wczesnych etapach wymaga sprawdzenia wszystkich innych etapów
+- czasochłonność ze względu na liczne dokumentacje oraz testy na każdym etapie
+- pierwsze działajace części systemu są gotowe dopiero po zakończeniu większości etapów
+
+## 11. Rola i algorytmy mechanizmu szeregowania zadań w jądrze systemu operacyjnego
+
+## 12. Modele barw w grafice komputerowej
+
+## 13. Poziomy testowania w cyklu życia oprogramowania
+
+## 14. Klasy języków programowania na wybranych przykładach
+
+## 15. Zasady budowy interfejsów użytkownika systemów informatycznych
+
+## 16. Techniki komunikacji międzyprocesowej
+
+## 17. Główne techniki zwiększania wydajności współczesnych procesorów
+
+## 18. Charakterystyka modeli przetwarzania w Internecie
+
+## 19. Otwarte systemy agentowe: definicja, problemy konstrukcyjne i metody ich rozwiązywania
+
+## 20. Metody pozyskiwania danych przestrzennych
+
+## 21. Metody klasyfikacji obrazów satelitarnych
+
+## 22. Zastosowania formalizmu i metod teorii grafów
+
+## 23. Paradygmat programowania strukturalnego
+
+## 24. Metody kompresji stratnej obrazów i dźwięku
+
+## 25. Rodzaje filtrów oraz ich zastosowanie w przetwarzaniu obrazów
