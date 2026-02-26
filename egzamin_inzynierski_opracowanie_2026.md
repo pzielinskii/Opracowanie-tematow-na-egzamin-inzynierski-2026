@@ -567,6 +567,55 @@ Przykłady systemów zarządzania takimi bazami danych (SZBZ - System Zarządzan
 - Microsoft SQL Server (MSSQL)
 - SQLite
 
+### Dlaczego modeluje się bazy?
+
+Modelując baze danych staramy się uzyskać strukturę tabel oraz zależności, tak aby dane były spójne i jednoznaczne, logicznie uporządkowane, pozbawione redundancji, łatwe do utrzymania i rozwoju. Modelowanie bazy odbywa się przed implemetacją takiej bazy w jednym z sytemów zarządzania.
+
+### Zasady
+
+1. Zasada jednoznacznej identyfikacji (klucz główny) - każda tabela powinna posiadać swój klucz główny który jednoznaczenie identyfikuje każdy rekord, nie może on być NULLem, powinien być stabilny (niezmienny po utworzeniu rekordu). Przykłady: id_klienta, numer_zamowienia.
+2. Zasada minimalnej redundancji (normalizacja) - celem tej zasady jest eliminacja powialania się danych, zmniejszenie ryzyka niespójności, ułatwienie aktualizacji danych oraz zapobieganie anomaliom (wstawiania, usuwania, modyfikacji). Ta zasada ma w sobie tak zwane formy normalne:
+    - 1NF - wartości atomowe (niepodzielne)
+    - 2NF - brak zależności częściowych (wszystkie atrybuty niekluczowe muszą zależeć od całego klucza podstawowego a nie tylko jego części)
+    - 3NF - brak zależności przechodnich (tabele nie mogą między sobą być w relacji przechodniej [A -> B, B -> C to C -> A])
+3. Zasada integralności danych - zapewnia spójność danych w bazie
+    - integralność encji - klucz główny nie może być NULL
+    - integralność referencyjna - klucz obcy musi wskazywać istniejący rekord w tabeli nadrzędnej
+    - integralność dziedzinowa - wartości muszą być zgodne z określonymi typami i zakresami
+    - ograniczenia unikalności - wartości muszą być unikalnem, jedna tabela jeden typ obiektu
+
+### Etapy modelowania bazy danych
+
+Wyróżniamy trzy etapy modelowania:
+
+1. Model pojęciowy / koncepcyjny (ERD - Entity-Relationship Diagram) - diagram związków, atrybutów i encji
+2. Model logiczny - tabele, klucze i zależności
+3. Model fizyczny - implementacja w systemie zarządzania, typy danych, indeksowanie i optymalizacja
+
+#### Model pojęciowy / koncepcyjny
+
+Zrozumienie co ma być przechowywane, bez wchodzenia w technikalia implementacji. Zwykle realizowane przez diagram encjowo-relacyjny. Nie wchodzimy tutaj w typy danych, ani to jakim kluczem powiązane są tabele tylko przykładowo "klient składa zamówienie".
+
+Podstawowe elementy:
+
+- Encje - obiekty świata rzeczywistego (klient, zamówienia), tabele
+- Atrybuty - cechy encji (numer_zamowienia, imie_klienta), kolumny
+- Relacje - powiązania między encjami
+
+##### Rodzaje relacji
+
+- 1:1 (jeden do jednego)
+- 1:N (jeden do wielu)
+- N:M (wiele do wielu) - wymaga tabeli pośredniczącej (asocjacyjnej)
+
+#### Model logiczny
+
+Przejście z modelu pojęciowego na opis struktur, która będzie zgodna z teorią baz, tutaj dbamy o normalizacje i definujemy klucze. Określamy nazwy kolumn i ogólne typy przykładowo to będzie jakiś tekst. Zamieniamy tutaj relacje typu wiele do wielu na tabele oraz tabele asocjacyjną (łączącą).
+
+#### Model fizyczny
+
+Tutaj kończy się teoria, przechodzimy z wcześniej opisanej logiki na konkretny system zarządzania bazą danych, biorąc pod uwagę jego zalety, wady, ogarniczenia. Celem tego etapu jest implementacja i optymalizacja. Przechodzimy też z specyfiki typów "jakiś tekst" na VARCHAR(255) lub TEXT, zamiast "liczba" to INT, BIGINT. Szacujemy, które kolumny będą najczęściej przeszukiwane aby je indeksować i przyspieszyć bazę. Tutaj też definiujemy ogaraniczenia dla atrybutów przykładowo UNIQUE - wymaganie unikatowych danych.
+
 ## 10. Opis wybranej metodyki wytwarzania oprogramowania
 
 ### V-Model (model V)
