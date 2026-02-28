@@ -126,7 +126,7 @@ Algorytmy wykorzystujące stos (V - vertices [wierzchołki w grafie], E - edges 
 | Algorytm                            | Złożoność czasowa    | Pamięciowa     |
 | ----------------------------------- | ------------         |-------------   |
 | Sprawdzanie poprawności nawiasów    | $$O(n)$$             | $$O(n)$$       |
-| Przeszukiwanie grafu w głąb (DFS)   | $$O(V * E)$$         | $$O(V)$$       |
+| Przeszukiwanie grafu w głąb (DFS)   | $$O(V \cdot E)$$     | $$O(V)$$       |
 
 #### Kolejka
 
@@ -144,7 +144,7 @@ Algorytmy wykorzystujące kolejkę:
 
 | Algorytm                            | Złożoność czasowa | Pamięciowa     |
 | ----------------------------------- | ----------------- |--------------- |
-| Przeszukiwanie grafu w szerz (BFS)  | $$O(V * E)$$      | $$O(V)$$       |
+| Przeszukiwanie grafu w szerz (BFS)  | $$O(V \cdot E)$$  | $$O(V)$$       |
 
 #### Graf
 
@@ -164,7 +164,7 @@ Algorytmy bazujące na grafach:
 | --------------------------- | -----------------                  | ---------- |
 | Przeszukiwanie wszerz (BFS) | $$O(V + E)$$                       | $$O(V)$$   |
 | Przeszukiwanie w głąb (DFS) | $$O(V + E)$$                       | $$O(V)$$   |
-| A*                          | $$O(E * log_{V})$$                 | $$O(V)$$   |
+| A*                          | $$O(E \cdot log_{V})$$             | $$O(V)$$   |
 | Dijkstra                    | $$O((V + E)log_{V})$$ $$O(V^{2})$$ | $$O(V)$$   |
 
 #### Tablicje asocjacyjne (hash table/map) (słowniki)
@@ -182,10 +182,10 @@ Podstawowwe operacje na tablicy asocjacynej:
 
 Algorytmy bazujące na tablicach asocjacyjnych:
 
-| Algorytm                                 | Złożoność czasowa  | Pamięciowa     |
-| -----------------------------------      | -----------------  |--------------- |
-| Grupowanie anagramów (k - długość słowa) | $$O(nk*log_{k})$$  | $$O(n)$$       |
-| Dwa elementy których suma = X            | $$O(n)$$           | $$O(n)$$       |
+| Algorytm                                 | Złożoność czasowa    | Pamięciowa     |
+| -----------------------------------      | -----------------    |--------------- |
+| Grupowanie anagramów (k - długość słowa) | $$O(nk\cdotlog_{k})$$| $$O(n)$$       |
+| Dwa elementy których suma = X            | $$O(n)$$             | $$O(n)$$       |
 
 ## 3. Nowoczesne platformy programowania obiektowego
 
@@ -652,6 +652,108 @@ Następnie po zakończeniu tej fazy zespół testerski rozpoczyna testy od najmn
 - pierwsze działajace części systemu są gotowe dopiero po zakończeniu większości etapów
 
 ## 11. Rola i algorytmy mechanizmu szeregowania zadań w jądrze systemu operacyjnego
+
+### Czym jest szeregowanie zadań?
+
+Szeregowanie zadań (CPU scheduling) to mechanizm systemu operacyjnego polegający na wyborze procesu lub wątku, który w danym momencie otrzyma dostęp do procesora (CPU).
+
+Jest to podstawowa funkcja jądra systemu operacyjnego, realizowana przez tzw. scheduler. Scheduler to część jądra systemu operacyjnego odpowiedzialna za wybór procesu/wątku, który otrzyma CPU, przełączanie kontekstu między procesami, zapewnienie sprawiedliwego podziału czasu procesora, optymalizację wydajności i responsywności systemu.
+
+### Dlaczego potrzebne jest szeregowanie zadań?
+
+Szeregowanie jest potrzebne, ponieważ procesor może w danym momencie obsłużyć jeden wątek (procesor jednordzeniowy) lub jeden wątek na rdzeń (procesor wielordzeniowy). Jednocześnie w systemie działa wiele procesów, które potrzebują dostępu do procesora. Scheduler decyduje, co wykona się teraz i jak długo, kiedy nastąpi przełączenie.
+
+### Cele mechanizmu szeregowania
+
+- maksymalne wykorzystanie CPU
+- minimalizację czasu oczekiwania procesów
+- szybkie reakcje systemu (responsywność)
+- obsługę wielu procesów jednocześnie (wielozadaniowość)
+- realizację priorytetów procesów
+- przewidywalność w systemach czasu rzeczywistego
+
+### Stany procesów w systemach operacyjnych
+
+#### Model 5-stanowy
+
+Wyróżna 5 różnych stanów procesu:
+
+- new
+- ready
+- running
+- waiting
+- terminated
+
+Przejścia między stanami oraz ich przyczyny:
+
+| Z jakiego stanu | Do jakiego | Co powoduje przejście                     |
+| --------------- | ---------- | ----------------------------------------- |
+| New             | Ready      | utworzenie procesu zakończone (admission) |
+| Ready           | Running    | przydział CPU przez scheduler             |
+| Running         | Waiting    | żądanie I/O / oczekiwanie na zdarzenie    |
+| Waiting         | Ready      | zakończenie I/O / zdarzenie wystąpiło     |
+| Running         | Ready      | wywłaszczenie (koniec kwantu czasu)       |
+| Running         | Terminated | zakończenie procesu                       |
+
+#### Model 7-stanowy
+
+Wyróżnia 5 stanów z poprzedniego modelu oraz dwa dodatkowe:
+
+- new
+- ready
+- running
+- waiting
+- terminated
+- ready suspended
+- blocked suspended
+
+Przejścia między stanami nie opisanymi w poprzednim modelu:
+
+| Z jakiego stanu   | Do jakiego        | Co powoduje przejście               |
+| ----------------- | ----------------- | ----------------------------------- |
+| Ready             | Ready Suspended   | brak pamięci RAM (swap out)         |
+| Waiting           | Blocked Suspended | brak pamięci RAM                    |
+| Ready Suspended   | Ready             | przywrócenie do RAM (swap in)       |
+| Blocked Suspended | Waiting           | przywrócenie do RAM                 |
+| Blocked Suspended | Ready Suspended   | zakończenie I/O podczas zawieszenia |
+
+### Wywłaszczanie
+
+Wywłaszczanie to mechanizm, w którym system operacyjny może przerwać wykonywanie aktualnego procesu i przydzielić CPU innemu procesowi, nawet jeśli ten pierwszy nie zakończył jeszcze swojej pracy.
+
+#### Jak działa wywłaszczanie?
+
+System operacyjny wykorzystuje zegar systemowy. Bazując na tym zegarze działa tak zwane przerwanie (interrupt). Dzieli ono czas na kwanty, które określają fragmenty czasu procesora. Podczas przerwania obecne procesy tracą swój czas procesora a scheduler wybiera jaki proces otrzyma teraz dostęp.
+
+#### Dlaczego jest potrzebne wywłaszczanie?
+
+Proces wywłacszczania umożliwa sprawiedliwy podział czasu procesora, szybkie regowanie na zdarzenia (kliknięcie przycisku myszy), obsługę priorytetyzacji procesów w trakcie trwania innych procesów. Bez wywłaszczania proces mógłby zajmować CPU dowolnie długo, system mógłby być mało responsywny, a aplikacje interaktywne wydawałyby się zbyt wolne.
+
+### Algorytmy szeregowania zadań
+
+#### FCFS (First Come, First Served)
+
+Bardzo prosty algorytm zakładający że pierwszy proces nie zależnie od czasu wykonania jest wykonywany jako pierwszy. Jego główną zaletą jest prostota jednak posiada wady zależne od długości wykonywanych procesów. Jeżeli pierwszy proces jest bardzo długi a kolejne krótkie to długi proces potrafi zablokować te krótkie, powstanie tak zwany efekt konwoju. Ten algorytm jest uważany za mało responsywny.
+
+#### SJF (Shortest Job First)
+
+Algorytm zakładający, że procesy z najkrótszym czasem wykonania mają pierwszeństwo wykonania. Minimalizuje to średni czas oczekiwanian na wykonanie, jednak jego wadą jest wymóg znajomości czasu wykonania oraz ryzyko zagłodzenia długich procesów jeżeli krótkie ciągle dochodzą.
+
+#### Round Robin (RR)
+
+Algorytm pracujący na kwantach czasu. Każdy proces otrzymuje z góry ustalony kawałek czasu po jego upłynięciu następuje przełączenie i inny proces dostaje kwant czasu. Ten algorytm zakłada sprawiedliwość i jest uważany za dobry dla systemów wymagających responsywności i interaktywności. Jego wady mogą wynikać z doboru kwantów czasu. Jeżeli kwant czasu będzie zbyt krótki przełączanie kontekstu procesora jest większe, a zbyt długi kwant zmniejsza responsywność systemu.
+
+#### Szeregowanie priorytetowe
+
+Algorytm zakładający priorytetyzacje każdego procesu. Im wyższy priorytet tym wcześniej zostanie wykonany proces. Umożliwia realizacje ważnych zadań o wiele wcześniej. Jednak posiada ryzyko zagłodzenia procesów o niskim priorytecie. Ta wada jest jednak możliwa do załagodzenia mechanizmem podnoszenia priorytetów dla starszych procesów (aging).
+
+#### Rozwiązania wielopoziomowe
+
+##### Kolejki wielopoziomowe (Multilevel Queue Scheduling,  Multilevel Feedback Queue)
+
+Procesy podzielone są na różne kolejny według ich kategorii. Każda kolejka może mieć własny algorytm szergowania przykładowo RR dla interaktywnych żeby zachować responsywność a FCFS dla wsadowych. Umożliwa to różnorodność i dopasowanie algorytmów do typu procesu jaki będą obsługiwać. Jednak zwiększa to złożoność całości.
+
+Oprócz powyższego mechanizmu znany jest również multilevel feedback queue polegający na większej adapcyjności do zachowania procesów. Dany proces może zmienić kolejke w zależności od jego czasu wykonania albo tego jakie elementy wejścia-wyjścia musi użyć. Jego wadą jest wysoka złożoność implementacji i zarządzania.
 
 ## 12. Modele barw w grafice komputerowej
 
