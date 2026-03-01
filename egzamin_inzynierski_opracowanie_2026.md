@@ -182,10 +182,10 @@ Podstawowwe operacje na tablicy asocjacynej:
 
 Algorytmy bazujące na tablicach asocjacyjnych:
 
-| Algorytm                                 | Złożoność czasowa    | Pamięciowa     |
-| -----------------------------------      | -----------------    |--------------- |
-| Grupowanie anagramów (k - długość słowa) | $$O(nk\cdotlog_{k})$$| $$O(n)$$       |
-| Dwa elementy których suma = X            | $$O(n)$$             | $$O(n)$$       |
+| Algorytm                                 | Złożoność czasowa      | Pamięciowa     |
+| -----------------------------------      | -----------------      |--------------- |
+| Grupowanie anagramów (k - długość słowa) | $$O(nk \cdot log_{k})$$| $$O(n)$$       |
+| Dwa elementy których suma = X            | $$O(n)$$               | $$O(n)$$       |
 
 ## 3. Nowoczesne platformy programowania obiektowego
 
@@ -756,6 +756,29 @@ Procesy podzielone są na różne kolejny według ich kategorii. Każda kolejka 
 Oprócz powyższego mechanizmu znany jest również multilevel feedback queue polegający na większej adapcyjności do zachowania procesów. Dany proces może zmienić kolejke w zależności od jego czasu wykonania albo tego jakie elementy wejścia-wyjścia musi użyć. Jego wadą jest wysoka złożoność implementacji i zarządzania.
 
 ## 12. Modele barw w grafice komputerowej
+
+Model barw to matematyczny sposób opisu koloru za pomocą zestawu liczb (składowych).
+Definiuje on, jak reprezentować kolor w systemie komputerowym lub urządzeniu. Kolor w informatyce nie jest „barwą” samą w sobie — jest wektorem liczb w określonej przestrzeni. Różne modele barw są używane w różnych kontekstach, takich jak wyświetlanie na ekranie, drukowanie czy przetwarzanie obrazów.
+
+### Model RGB (Red, Green Blue)
+
+Jest to addytywny model barw, polegającym na dodawaniu składowych światała aby uzyskać dany kolor. Brak jakiejkolwiek barwy (0,0,0) jest kolorem czarnym, a maksimum we wszystkich składowych to biały (255,255,255). Zawiera 3 składowe zawarte w nazwie, kolory czerowny, zielony i niebieski. Standatrdowo każdy znich ma zakres 8 bitów (0-255). W grafice komuterowej najczęsciej jest to model zapisu obrazu rastrowego. Najczęsciej wykorzystywany jest w ekranach (monitory, telewizory, telefony). Ten model dostał również rozszerzenia. Tak zwany RGBA to model RGB rozszerzony o kanał Alfa oznaczający przezroczystość oraz rozszerzenie wartości na 16 lub 32 bity na kanał w grafice profesjonalnej.
+
+### Model CMYK (Cyan, Magenta, Yellow, Key (black))
+
+Jest to subtraktywny model braw, polegający na pochłanianiu światla zamiast dodawania. Kolory są tworzone przez mieszanie składowych cyjan, magenta oraz żółty, a dzięki dodatkowej składowej jako czarny jest stworzony idealnie do druku.
+
+### Model HSL/HSV (Hue, Saturation, Lightness / Value)
+
+Jest to model opartny na percepcji ludzkiego oka. Baazuje na trzech składowych odcień (hue) - określa kolor na wykresie kołowym 0-360, nasycenie (saturation) 0-100% definiuje jak bardzo nasycony jest dany kolor, jasność/wartość (lightness/value) 0-100% określa jak jasny jest ten kolor. Wykorzystywany jest głównie w projektowaniu interfejsów użytkownia, czy w przetwarzaniu obrazów (przykładowo sprawdzenie czy zdjęcie ma kolor czerwony nie zależnie od cieni).
+
+### Model YCbCr (Luma, Chorma blue, Chroma red)
+
+Model który jest bardzi uważany za podmodel RGB. Został stworzony jako ukłon dla oszczędności danych. Jest on często wykorzystywany w produkcji wideo. Dzięki niemu filmy na platformach VOD działają płynnie przy minimalnych prędkościach łączy. Polega na rozdzieleniu jasności oraz koloru wykorzystując wadę ludzkiego oka. Człowiek świetnie rozróżnia jasność jednak detal w kolorze jest problemem. Ten model jest idealny do kompresji danych ze względu na możliwość samplowania kanałów. Można przykładowo przesłać pełny kanał janości a dla koloru tylko część. Pozwala na różne poziomy kompresji zależnie od propocji przekazania kanałów.
+
+### Konwersja między modelami barw
+
+Jest możliwa konwersja między modelami barwowymi, ale przez cechy każdego z modeli bardzo łatwo stracić niektóre informacje. Przejścia typu CMYK &rarr; RGB &rarr; CMYK nigdy nie dają efektu początkowego. Aby zachować wybrany kolor najlepiej korzystać z modelu w którym był wybrany.
 
 ## 13. Poziomy testowania w cyklu życia oprogramowania
 
