@@ -417,7 +417,7 @@ Charakterystyka:
 - kontrola dostępu (private, protected, public) (enkapsulacja)
 - automatyczne zarządzanie pamiecią
 
-#### C-sharp
+#### C&num;
 
 Charakterystyka:
 
@@ -815,6 +815,33 @@ Po zgloszeniu awarii lub defektu na jednym z poziomów musi zostać on poprawion
 Tak jak retesty odnoszą się do sprawdzania elementów oprogramowania po wprowadzeniu poprawek lub po wprowadzeniu nowych funkcjonalności, czy kolejnego elementu integrującego się z poprzednimi. Podczas progresowania z rozbudową lub naprawianiem oprogramowania przypadkowo można doprowadzić do regresu / regresji. Testy te mają wykryć czy w częsciach lub systemach, które wcześniej działały poprawnie nie pojawiły się awarie bądź defekty. Regresja występuje tylko wtedy jeżeli przykładowo dany przypadek testowy nie wykazał błędów a po dalszych zmianach w systemie ten sam przypadek wykrył błąd.
 
 ## 14. Klasy języków programowania na wybranych przykładach
+
+### Po co języki programowania są klasyfikowane?
+
+Języki programowania są klasyfikowane według różnych kryteriów, aby można było zrozumieć możliwości oraz ogarniczenia każdego z nich i porównać sposoby tworzenia oprogramowania. Mając takie informacje możemy łatwiej dobrać język programowania do problemu, który chcemy rozwiązać.
+
+### Klasyfikacja języków programowania
+
+#### Paradygmaty programowania
+
+- programowanie obiektowe - opiera się na obiektach, które łącza dane i metody w klasy. Kluczowe cechy to hermetyzacja, dziedziczenia i polimorfizm. Przykłady: Java, C&num;
+- programowanie proceduralne - opiera się na procedurach lub funkcjach (zbiorze procedur) wykonywanych sekwencyjnie. Przykłady: C, Pascal
+- programowanie funkcyjne - program opartny na funkcjach zwykle matematycznych, zwykle nie powoduje zmiany danych. Zamiast pętli korzysta z rekurencji. Przykład: Haskell
+
+#### Poziomy abstrakcji
+
+- niskiego poziomu - języki te charakteryzują się bliskim działaniem ze sprzętem i bezpośrednią jego kontrolą. Cechują się wysoką wydajnością jednak są zależne od architektury sprzętu. Przykłady: Asembler, Embedded C (jako podzbiór C), C (manualne zarządzanie pamięcią)
+- wysokiego poziomu - zapewniają wysoką abstrakcje i łatwość programowania, bardziej zbliżone do języka naturalnego, automatycznie zarządzają pamięcią i zasobami systemowymi. Łatwe w przenoszczeniu (działają prawie na każdym sprzęcie) Przykłady: Python, Java, C&num;
+
+#### Typowanie
+
+- satyczne - typy zmiennych są określane podczas kompilacji kodu. Przykłady Java, C++, C&num;
+- dynamiczne - typy zmiennych określane są podczas wykonania programu. Przykłady Python, JavaScripy
+
+#### Sposób wykonania
+
+- kompilowalne - kod źródłowy tłumaczony jest na kod maszynowy przed uruchomieniem programu. Przykłady C, C++, Java, C&num;
+- interpretowalne - kod źródłowy wykonywany jest przez interpreter języka. Przykłady Python, JavaScript
 
 ## 15. Zasady budowy interfejsów użytkownika systemów informatycznych
 
