@@ -782,6 +782,38 @@ Jest możliwa konwersja między modelami barwowymi, ale przez cechy każdego z m
 
 ## 13. Poziomy testowania w cyklu życia oprogramowania
 
+### Poziomy testowania
+
+Okreslają na jakim etapie i jaką część oprogramowania sprawdzamy. Każdy poziom skupia się na innych częściach i szuka innych błędów. Definiuje się 4 podstawowe poziomy testów w cyklu życia oprogramowania.
+
+#### Testy jednostkowe (Unit testing)
+
+Ten poziom skupia się na najmniejszych fragmentach oprogramowania. Sprawdza konkretne moduły, metody, klasy. Polega na sprawdzeniu czy dany pojedyńczy element działa poprawnie będąc wyizolowanym od reszty oprogramowania. Na tym poziomie testów zwykle stosowana jest technika białoskrzynkowa (white-box testing), polegająca na analizie kodu pod różnymi kątami. Uwzględnia analizę statyczną, testy pokrycia instrukcji lub gałęzi. Często są automatyzowane i wykonywane przez programistów ze względu na ich prostote oraz niewielki zakres. Ich celem jest wyeliminowanie błędów logicznych, warunków czy brzegowych przy zakresach. Czesto pozwalają też wykryć martwy lub zbędny kod oprogramowania (warunki, które nigdy nie zachodzą).
+
+#### Testy integracyjne (Integration Testing)
+
+Ten poziom skupia się na testowaniu czy najmniejsze moduły współpracują ze sobą poprawnie, sprawdzane są interfejsy i przepływy danych. Czasami sprawdzane są również integracje systemów, które są rozdzielone w danym oprogramowaniu przykładowo czy baza danych poprawnie zapisuje dane wpisane przez interfejs lub przekazane z innej części systemu. Przy testach integracji modułów jest wykorzystywana technika białoskrzynkowa tak jak w testach jednostkowych. Czesto ten poziom testów rozdzielany jest na itegracjen modułów oraz integracje systemów, gdzie pierwszy typ wykonują również programiści, a drugi typ testerzy. Głownie polega na wykrywaniu błędów komunikacji między modułami/systemami, coś może działać samodzielnie natomiast w parze z innym modułem już nie.
+
+#### Testy systemowe (System Testing)
+
+Ten poziom zawiera w sobie testy całegop systemu. Zwykle jest wykonywany przez zespół testerski. Opiera się na wymaganiach funkcjonalnych oraz niefunkcjonalnych. Najczęściej na tym poziomie testuje się technikami czarnoskrzynkowymi (black-box testing), polega to na testach systemu bez wglądu w kod oprogramowania, zakładając system jako czarna skrzynia, która ma się zachować zgodnie z założeniami. Przy testach funkcjonalnych bazuje na scenariuszach biznesowych, przypadkach użycia lub na samych wymaganiach funkcjonalnych. Przy testach niefunkcjonalnych sprawdzamy wydajność, bezpieczeństwo, niezawodność oraz kompatybilność z różnymi urządzeniami uruchomieniowymi. Na tym poziome wykrywamy różne rodzaje błędów ze względu na duży zakres testów.
+
+#### Testy akceptacyjne (Acceptance Testing)
+
+Ten poziom zwykle jest ostatnim krokiem przed oddaniem systemu do użytku przez użytkownika końcowego. Sprawdza czy system jest w pełni zgodny z oczekiwaniami użytkownika końcowego, czy działa na środowisku docelowym oraz czy jest gotowy do użycia. Zależnie od użytkownika końcowego wykonywany jest przez klienta, zespół testerski lub product ownera. Sprawdza scenariusze biznesowe systemu, historie użytkownika, zgodności elementów z ustaleniami oraz pełne procesy operacyjne.
+
+### Testy wykonywane na różnych poziomach
+
+Testy te nie są uzależnione od danych poziomów testowania.
+
+#### Retesty (confirmation testing, retesting)
+
+Po zgloszeniu awarii lub defektu na jednym z poziomów musi zostać on poprawiony. Zazwyczaj zgłaszający dostaje poprawiony element do tak zwanytch retestów. Ponownego sprawdzenia tego samego scenariusza lub działania po wprowadzonych poprawkach. Przy przeglądach lub analizach statycznych samo ponone sprawdzenie czy poprawka została wprowadzona w kodzie / dokumencie jest również uważana za retest.
+
+#### Testy regresyjne (regression testing)
+
+Tak jak retesty odnoszą się do sprawdzania elementów oprogramowania po wprowadzeniu poprawek lub po wprowadzeniu nowych funkcjonalności, czy kolejnego elementu integrującego się z poprzednimi. Podczas progresowania z rozbudową lub naprawianiem oprogramowania przypadkowo można doprowadzić do regresu / regresji. Testy te mają wykryć czy w częsciach lub systemach, które wcześniej działały poprawnie nie pojawiły się awarie bądź defekty. Regresja występuje tylko wtedy jeżeli przykładowo dany przypadek testowy nie wykazał błędów a po dalszych zmianach w systemie ten sam przypadek wykrył błąd.
+
 ## 14. Klasy języków programowania na wybranych przykładach
 
 ## 15. Zasady budowy interfejsów użytkownika systemów informatycznych
