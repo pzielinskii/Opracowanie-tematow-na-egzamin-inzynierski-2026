@@ -845,6 +845,56 @@ Języki programowania są klasyfikowane według różnych kryteriów, aby można
 
 ## 15. Zasady budowy interfejsów użytkownika systemów informatycznych
 
+### Co nazywamy interfejsem użytkownika?
+
+Interfejs użytkownika (UI - user interface) to warstwa systemu informatycznego, umożliwiająca komunikację między użytkownikiem a oprogramowaniem, prezentuje dane oraz umożliwia wykonanie akcji. Może to być graficzny interfejs (GUI - graphical user interface), interfejs tekstowy, terminal (CLI - command line interface), czy rozwinięcie graficznego o gesty przykładowo w interfejsach na smartfonach. Jakość takiego interfejsu bezpośrednio wpływa na jego użyteczność, efektywność oraz satysfakcje z użycia.
+
+### Zasady użyteczności Jacoba Nielsena (Heurystyki Nielsena)
+
+#### Stan systemu powinien być widoczny (Visibility of system status)
+
+Użytkownik powinien być zawsze informowany o tym, co się dzieje w danej chwili. Paski ładowania czy inne animacje, komunikaty, podświetlanie sekcji menu, w której użytkownik przebywa oraz informowanie szczególnie przy płatnościach o każdym etapie.
+
+#### Zgodność systemu z rzeczywistościa (Match between system and the real world)
+
+Interfejs użytkownika powinien korzystać z języka zrozumiałego dla użytkownika. Wykorzystywać proste zwroty jak kosz na usunięte rzeczy. Unikanie języka technicznego jest tutaj plusem nie minusem. Zamiast błędu 404 "not found" lepiej przetłumaczyć to na każdy język, który system wykorzystuje i napisać „Nie znaleziono strony”.
+
+#### Kontrola i swoboda użytkownika (User control and freedom)
+
+Użytkownik powienien mieć możliwość cofnięcia każdej jego operacji (undo), czy anulowania działań lub powrotu krok do tyłu. Brak takich możliwości powoduje poczucie braku kontroli.
+
+#### Standardy i spójność (Consistency and standards)
+
+Interfejs powinien być przewidywalny, zgodny z konwencjami branżowymi (typu umiejscowienie menu). Powinien zawierać jednolitą terminologię i dane elementy powinny działać tak samo na każdym widoku.
+
+#### Zapobieganie błędom (error prevention)
+
+Interfejs użytkownika powinien być programowany tak, aby zapobiegać błędom. Znacznie łatwiej jest zapobiec pomyłkom niż je odwrócić. Potwierdzenia przez usunięciem, czy walidacja pól formularza przed wysłaniem zamiast samo wyświetlanie komunikatu błędu przed wysłaniem. Dezaktywacja przycisku, gdy dane nie zostały wpisane lub są niepoprawne. Listy rozwijane zamiast pól tekstowych tam, gdzie się da.
+
+#### Rozpoznawanie/pokazywanie zamiast przypominania (Recognition rather than recall)
+
+Interfejs powinien minimalizować wymóg obciążenia pamięci użytkownika. Wszystkie opcje oraz informacje powinny być ekpsonowane na ekranie tam gdzie są potrzebne. Jeżeli użytkownik musi wpisać swoje dane przy składaniu zamówienia pokażmy mu je ponownie na koniec, aby nie musiał cofać się lub pamiętać czy dobrze wpisał.
+
+#### Elastyczność i efektywność użytkowania (Flexibility and efficiency of use)
+
+Interfejs powinien być prosty do użycia przez początkujących jednak wydajny dla zaawansowanych użytkowników. Przykładowo skróty klawiszowe dla przyspieszenia pracy, prosta personalizacja interfejsu oraz automatyczne uzupełnianie danych.
+
+#### Estetyka i minimalizm (Aesthetic and minimalist design)
+
+Aby interfejs był prosty i przyjazny w użyciu należy zadbać aby nie miał zbędnych elementów rozpraszających oraz rywalizujących o uwagę użytkownika. Każdy dodatkowy element może zwiększyć obciążenie poznawcze. Należy unikać nadmiaru kolorystycznego oraz przeładowania ekranu.
+
+#### Pomoc w rozpoznawaniu i naprawianiu błędów (Help users recognize, diagnose, and recover from errors)
+
+Jeżeli pojawia się błąd należy go zakomunikować użytkownikowi jasno i prezejżyście w prostym języku oraz z sugestią rozwiązania. Zaleca się unikać informacji typu "Error 0x80004005" i zastępować je jasnym opisem: "Nie można zapisać pliku – brak uprawnień. Sprawdź ustawienia dostępu".
+
+#### Pomoc i dokumentacja (Help and documentation)
+
+Nawet jeżeli system jest intuicyjny i prosty, czasami potrzebna jest pomoc. Systemy i interfejsy powinny oferować łatwo dostępną pomoc, dokumentacje i odpowiedzi na często zadawane pytania. Dokumentacja powinna być wpełni zorientowana na użytkownika i jasno opisywać działanie.
+
+### Skrócony opis
+
+Interfejs użytkownika powinien być prosty oraz minimalistyczny. Powinien zawierać tyko niezbędne elementy jasno pokazane na ekranie. Powinien być spójny na każdym widoku lub spójny z platformą na której pracuje. Jednolitość kolorystyczna, czcionkowa oraz przewidywalne działanie elementów interaktywnych. Stan systemu powinien być zawsze widoczny i pokazujący co się dzieje w danym czasie oraz czy zakończyło się to sukcesem czy błędem. Interfejs powinien zwracać jak najwięcej informacji na akcje użytkownika, podświetlanie przycisków, komunikaty o błędach, animacje sugerujące działanie. Interfejs powinien zapobiegać błędom, walidowanie pól formularzy, ograniczenie możliwości wprowadzenia błędów oraz potwierdzanie operacji krytycznych jak usuwanie. Czytekność, dostępność i ergonomia - intefejs powinien być dostępny i czytelny dla każdego, powinien zawierać logiczne rozmiezczenie elementów oraz dostosowanie do ekranu na którym jest wyświetlany.
+
 ## 16. Techniki komunikacji międzyprocesowej
 
 ## 17. Główne techniki zwiększania wydajności współczesnych procesorów
