@@ -915,15 +915,19 @@ Asynchroniczny sposób wymiany informacji. Proces może zarejestrować kolejkę 
 
 ##### Gniazda (Sockets)
 
-
+Gniazdo jest pojęciem abststrakcyjnm rezprezentującym dwukierunkowy punkt końcowy połączenia. Umożiwiają komunikacje między procesami poprzez sieć jak i lokalnie. Wykorzystują protokoły sieciowe takie jak TCP czy UDP. Działają w modelu klient-serwer. Najczęściej są wykorzystywane w aplikacjach sieciowych lub do komunikacji między różnymi systemami.
 
 #### Mechanizmy oparne na współdzielaniu pamięciu
 
+Pamięć współdzielona (shared memory) to najszybsza metoda IPC. Kilka procesów korzysta z tej samej puli pamięci. Jej minusy to potencjalne problemy z bezpieczeństwem skoro jeden proces ma dostęp do pamięci drugiego oraz wymóg synchornizacji korzysając z mechanizmów synchronizacji.
 
+##### Mechanizmy synchronizacji
 
-#### Mechanizmy synchronizacji
+Semafory - mechanizm synchronizacji dostępu do zasobów wspóldzielnych. Wyróżnia się semafory binarne oraz zliczające. Stosowane są aby zapobiegać zakleszczeniom (deadlock). Chociaż nie zawsze są w stanie to zrobić - problem ucztujących filozofów. Semafor jest kontrolą dostępu wspierającą współdzielanie zasobów takich jak pamięć.
 
+#### Sygnały
 
+Jedna z najstarszych metod IPC używanych w systemach Unix. Sygnały używane są do powiadamiania procesu o asynchronicznych wydarzeniach. Procesy mogą określać sposób, w jaki obsługują dany sygnał, lub pozwolić systemowi zająć się jego obsługą. Przykłaty to SIGINT, SIGKILL.
 
 ## 17. Główne techniki zwiększania wydajności współczesnych procesorów
 
