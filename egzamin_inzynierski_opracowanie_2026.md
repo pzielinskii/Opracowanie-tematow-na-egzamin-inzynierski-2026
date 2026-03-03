@@ -897,6 +897,34 @@ Interfejs użytkownika powinien być prosty oraz minimalistyczny. Powinien zawie
 
 ## 16. Techniki komunikacji międzyprocesowej
 
+### Komunikacja międzyprocesowa (IPC – Inter-Process Communication)
+
+Komunikacja międzyprocesowa to mechanizmy systemu operacyjnego umożliwiające wymianę danych oraz synchronizację między niezależnymi procesami. Procesy są izolowane w przestrzeni adresowej pamięci, dlatego IPC jest niezbędne do współpracy aplikacji. Główne cele IPC to przesyłanie danych, koordynacja pracy procesów, zapewnienie spójności i bezpieczeństwa oraz zwiększenie wydajności systemu wieloprocesowego.
+
+### Techniki IPC
+
+#### Mechanizmy oparne na przesyłaniu komunikatów
+
+##### Potoki (pipes)
+
+Jest to jednokierunkowy kanał komunikacji, najczęsciej stosowany między procesami spokrewnionymi. Są popularne w systemach operacyjnych UNIX/Linux i dzielą się na nazwane oraz nienazwane. Nienazwane potoki działają głównie między procesem rodzicem a potomnym. Za to potoki nazwane umożliwiąją komunikację między dowolnymi procesami i są zdefiniowane w systemie plików. Jest to bardzo prosty mechanizm jednak ograniczony do komunikacji jednkierunkowej bez użycia większej ilości potoków.
+
+##### Kolejki komunikatów (Message Queues)
+
+Asynchroniczny sposób wymiany informacji. Proces może zarejestrować kolejkę w menadżerze kolejek, na której będzie nasłuchiwał przychodzących wiadomości, oraz wysyłać wiadomości na kolejki innych procesów. Wiadomości będą czekać w kolejce aż do odczytania. Różne implementacje określają limit „czasu życia” wiadomości oraz limit wiadomości w kolejce. Zaltą tego rozwiązania jest brak potrzeby synchronizacji jednak wadą jest ograniczenie rozmiaru komunikatów.
+
+##### Gniazda (Sockets)
+
+
+
+#### Mechanizmy oparne na współdzielaniu pamięciu
+
+
+
+#### Mechanizmy synchronizacji
+
+
+
 ## 17. Główne techniki zwiększania wydajności współczesnych procesorów
 
 ## 18. Charakterystyka modeli przetwarzania w Internecie
