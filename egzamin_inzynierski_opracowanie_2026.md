@@ -994,6 +994,42 @@ Wraz ze zwiększeniem liczby rdzeni jednak brakiem wielordzeniowości aplikacji 
 
 ## 18. Charakterystyka modeli przetwarzania w Internecie
 
+### Czym są modele przetwarzania?
+
+Modele przetwarzaia w Internecie są to opisy spsobów rozmieszczania zasobów obliczeniowych, komunikacji między nimi oraz podziały odpowiedzialności za przetwarzanie danych. Te modele przechodziły różne ewolucje związane z rozwojem całej sieci jaką jest teraz Internet, wzrostem liczby użytkowników i zapotrzebowaniem na wydajność i skalowalność.
+
+### Model klient-serwer
+
+Najbardziej klasyczny model przetwarzania w Internecie. Występują w nim dwa typy urządzeń klient oraz serwer.
+
+Urządzenie typu klient wysyła zapytania do serwera o udostępnienie jakiegoś zasobu danych, a jego zadaniem jest prezentacja tych danych lub proste przetwarzanie części aplikacyjnych.
+
+Urządzenie typu serwer zwykle cechuje się dużą wydajnością aby przetwarzać dane, sprawdzać czy klient może mieć dostęp oraz wysyłać je na prośby wielu klientów jednocześnie.
+
+Zaletą takiego rozwiązania jest centralne zarządzanie danymi, łatwa kontrola dostępu oraz admnistracja, jednak posiada też wady. Skalowalność tego modelu jest ogarniczona jeżeli nie chcemy zwiększać ilości urządzeń typu serwer, a awaria jednego z takich urządzeń lub jedynego może doprowadzić do utraty usługi.
+
+Przykłady korzystające z tego rozwiązania to poczta elektroniczna, repozytoria plików lub struktura WWW.
+
+#### Model chmury obliczeniowej (Cloud Computing)
+
+Model chmurowy jest rozwinięciem modelu klient-serwer zeskalowanym na potrzeby wielu różnych usług. Zwykle cechuje się ogromną ilością serwerów zawartych w centrach danych i modelowanych tak, aby dynamicznie dzieić się mocą obliczeniową tam gdzie jest potrzebna. Jest to dalej model klient-serwer gdzie klientem zwykle jest urządzenie końcowe typu przeglądarka a serwery posiadają aplikacje i bazy danych.
+
+Zalety tego rozwiązania to elastyczność, wielka skala możliwa do podziału, redukcje kosztów infrastruktury, dostępność z dowolnego miejsca, a wadami tego rozwiązania jest kompletna zależność od dostawcy usług serwerowych (zarządzających centrami, serwerowniami) oraz problem prywatności i bezpieczeństwa takich serwerów.
+
+Przykładami zastosowania tego modelu są usługi typu SaaS (Software as a Service) oprogramownie jako usługa lub aplikacje internetowe. Przykładowo google workspace (gmail, docs, drive).
+
+### Model peer-to-peer (P2P)
+
+Model zapewniający działanie typu równy z równym. Każde urządzenie w tym modelu może pracować jako klient oraz jako serwer. Nie ma centralizacji, komunikacja odbywa się bezpośrednio między urządzeniami.
+
+Zaletami tego rozwiązania jest wysoka skalowalność, kazdy nowy klient jest również serwerem, odporność na awarie całości usługi oraz efektywne wykorzystanie zasobów wielu urządzeń. Jednak istniją również wady tego rozwiązania. Ciężko zarządzać taką siecią, nie jesteśmy w stanie zagwarantować bezpieczeństwa każdego z urządzeń oraz jakość usług jest zmienna.
+
+Najczęstrze zastosowanie takiego rozwiązania to udpostępnianie plików. Przykładowo BitTorrent. Komunikator Skype na wczesnych etapach swojego rozwoju opierał się na P2P do obsługi swoich rozmów.
+
+### Model przetwarzania rozproszonego 
+
+
+
 ## 19. Otwarte systemy agentowe: definicja, problemy konstrukcyjne i metody ich rozwiązywania
 
 ## 20. Metody pozyskiwania danych przestrzennych
