@@ -965,6 +965,33 @@ Jest to wykonywanie instrukcji nie trzymając się kolejności w programie, a uz
 
 Procesor przewiduje wynik instrukcji warunkowych. Pozwala na kontynuowanie potokowanie bez czekania na wynik skoku. Zmniejsza czas wykonania instrukcji skoku. Jednak błędna predykcja może spowodowac spadek wydajności.
 
+##### Very Long Instruction Word (VLIW)
+
+Procesory składające się z kilku (zwykle czterech lub ośmiu) jednostek obliczeniowych. Po normalnej kompilacji programu, kompilator VLIW porządkuje kod na ścieżki, które wprost nie posiadają jakichkolwiek zależności. Następnie są one dzielone na cztery lub więcej części (jeden dla każdej jednostki obliczeniowej CPU) i pakowane razem w większe instrukcje z dodatkową informacją odnośnie do jednostki, na której ma być wykonywana.
+
+#### Wielordzeniowość i wielowątkowość
+
+##### Wielordzeniowość (multi-core)
+
+Prawdziwa równoległość zadaniowa, procesor posiada wiele rdzeni i każdy z nich może wykonywać osobne zadanie.
+
+##### Wielowątkowość
+
+Każdy fizyczny rdzeń procesora potrafi obsługiwać dwa wątki jednocześnie korzystając z podziału fizycznych rdzeni na dwa logiczne. Firma AMD tą technologię nazwała SMT - Simultaneous Multithreading, natomiast Intel posiada swój odpowienik nazywający się HT - Hyper-Threading.
+
+#### Pamięć podręczna (Cache)
+
+Hierarchicznie strukturyzowana pamięć typu SRAM (statyczna, nieulotna) o którtkim czasie dostępu. Zlokalizowana bespośrednio w procesorze. Umożliwia ona zmniejszenie czasu dostępu do najważniejszych danych. Dzięki niej procesor może przechować część danych w zdecydowanie szybszej pamięci, niż wysyłać je do RAMu.
+Wyróżniamy trzy poziomy pamięci cache:
+
+1. L1 cache - pamięć podręczna pierwszego poziomu, zwykle znajduje się fizycznie bezpośrednio obok rdzenia proesora, działa z prędkością procesora przechowując najważniejsze intrukcje / dane.
+2. L2 cache - poziom drugi, zwykle zlokalizowany wewnątrz układu procesora ale poza rdzeniem, wolniejsza niż L1, ale dalej szybsza niż RAM, funkcjonuje jako bufor pamięciowy między L1 a L3 lub RAM.
+3. L3 cache - poziom trzeci, zwykle zlokalizowana również na układzie procesora, ale wspólna dla wszystkich jego rdzeni, najwolniejsza z pamięci podręcznych, jednak wciąż o wiele szybsza niż RAM, synchronizuje ona działanie rdzeni i przechowuje dane, które nie zmieściły się w L2 lub L1.
+
+#### Turbo/boost mode
+
+Wraz ze zwiększeniem liczby rdzeni jednak brakiem wielordzeniowości aplikacji pojawił się problem poboru mocy takich procesorów z tego powodu też pierwsze wielordzeniowe procesory miały niższe taktowanie. Rozwiązaniem stało się wyłączanie nieużywanych rdzeni i wykorzystanie mocy na podniesienie taktowania rdzenia, który tego wymaga.
+
 ## 18. Charakterystyka modeli przetwarzania w Internecie
 
 ## 19. Otwarte systemy agentowe: definicja, problemy konstrukcyjne i metody ich rozwiązywania
