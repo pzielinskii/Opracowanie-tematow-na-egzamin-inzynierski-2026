@@ -1026,9 +1026,21 @@ Zaletami tego rozwiązania jest wysoka skalowalność, kazdy nowy klient jest r�
 
 Najczęstrze zastosowanie takiego rozwiązania to udpostępnianie plików. Przykładowo BitTorrent. Komunikator Skype na wczesnych etapach swojego rozwoju opierał się na P2P do obsługi swoich rozmów.
 
-### Model przetwarzania rozproszonego 
+### Model przetwarzania rozproszonego
 
+W tym modelu zadania obliczeniowe są podzielone między wiele, urządzń pracujących w tej samej sieci. Duże zadanie jest dzielone na mniejsze części i równolegle wykonywane przez wiele urządzeń. Zasada działania jest zbliżona do jednego logicznego organizmu. Nie ma tutaj centralnego zarządzania.
 
+Zaletami tego rozwiązania jest odporność na awarię, łatwa skalowalność oraz duża wydajność obliczeniowa, jednak posiada też wady. Pojawiają się opóźnienia wynikające z komunikacji sieciowej tych urządzeń oraz trudna jest synchronizacja danych między dużą ilością urządzeń
+
+Najczęstrze zastosowanie takiego modelu to wyszukiwarki internetowe, systemy finansowe i bankowe oraz symulacje naukowe.
+
+#### Model edge computing
+
+Jest rozszerzeniem przetwarzania rozproszonego jednak przy założeniu, że obliczenia wykonywane są najbliżej miejsca powstania danych. Jak nazwa wskazuje na tak zwanej "krawędzi sieci". Zamiast rozsyłać dane do innych części sieci wykonywane są na danych urządzeniu lub na paru najbliższych.
+
+Zaletami tego roziwązania są mniejsze opóźniania niż w bazowym modelu, ograniczenie ruchu sieciowego. Wady tego rozwiązania to ograniczenie mocy obliczeniowej.
+
+Zastosowania to autonomiczne pojazdy lub internet rzeczy (IoT - Internet of Things).
 
 ## 19. Otwarte systemy agentowe: definicja, problemy konstrukcyjne i metody ich rozwiązywania
 
