@@ -1044,7 +1044,63 @@ Zastosowania to autonomiczne pojazdy lub internet rzeczy (IoT - Internet of Thin
 
 ## 19. Otwarte systemy agentowe: definicja, problemy konstrukcyjne i metody ich rozwiązywania
 
+### System agentowy
+
+System agentowy to system informatyczny składający się z jednego lub wielu agentów, które działają autonomicznie w określonym środowisku, postrzegają je za pomocą mechanizmów percepcji oraz podejmują działania w celu realizacji określonych zadań lub celów. Agenci w takim systemie mogą komunikować się, współpracować lub konkurować ze sobą, a ich zachowanie jest zazwyczaj oparte na regułach, wiedzy lub mechanizmach podejmowania decyzji.
+
+### Otwarty system agentowy (OMAS - Open Multi-Agent System)
+
+Otwarte systemy agentowe to systemy informatyczne składające się z wielu autonomicznych agentów, którzy mogą dołączać do systemu, opuszczać go oraz wchodzić w interakcje z innymi agentami bez pełnej kontroli jednego centralnego podmiotu i w trakcie działania systemu.
+
+Agent to autonomiczny podmiot, posiadający zdolności percepcyjne, decyzyjne i wykonawcze. Cechuje go samodzielność, zdolność do reakcji na zmiany w otoczeniu, zdolność do komunikacji z innymi agentami.
+
+Przykładowe zastosowania takiego systemu to wyszukiwanie informacji w sieci, zarządzanie sieciami telekomunikacyjnymi, różnego rodzaju symulacje - rynku, ruchu czy innych rzeczy.
+
+### Główne problemy konstrukcyjne
+
+#### Koordynacja agentów
+
+Agenci realizują własne cele, działania mogą się wzajemnie blokować.
+
+Rozwiązanie: protokoły negocjacji, kontrakty (Contract Net Protocol),mechanizmy konsensusu.
+
+#### Komunikacja między agentami
+
+Brak wspólnego języka, różne protokoły i formaty danych.
+
+Rozwiązanie: wspólne języki komunikacyjne, formalne protokoły interakcji.
+
+#### Bezpieczeństwo i zaufanie
+
+Agenci mogą działać nieuczciwie lub być złośliwi.
+
+Rozwiązanie: mechanizmy reputacji, systemy certyfikatów, monitorowanie zachowań.
+
+#### Skalowalność
+
+Wzrost liczby agentów zwiększa złożoność, ryzyko przeciążenia komunikacji.
+
+Rozwiązanie: hierarchiczne struktury, podział na grupy, lokalne interakcje.
+
+#### Konflikty i sprzeczne cele
+
+Agenci mogą mieć cele sprzeczne z innymi agentami.
+
+Rozwiązanie: mechanizmy rozwiązywania konfliktów, mediacja, negocjacje.
+
+#### Tabela podsumowująca
+
+| Problem      | Metoda rozwiązania       |
+| ------------ | ------------------------ |
+| Koordynacja  | protokoły negocjacji     |
+| Komunikacja  | standaryzacja            |
+| Zaufanie     | reputacja                |
+| Skalowalność | architektura rozproszona |
+| Konflikty    | mediacja                 |
+
 ## 20. Metody pozyskiwania danych przestrzennych
+
+
 
 ## 21. Metody klasyfikacji obrazów satelitarnych
 
