@@ -1260,7 +1260,52 @@ Firma chemiczna musi przechowywać substancje w przedziałach tak, aby niekompat
 
 ## 23. Paradygmat programowania strukturalnego
 
+### Czym jest programowanie strukturalne?
 
+Paradygmat programowania strukturalnego to sposób tworzenia programów komputerowych polegający na organizowaniu kodu w uporządkowaną, logiczną strukturę z wykorzystaniem jasno określonych konstrukcji sterujących. Celem tego podejścia jest zwiększenie czytelności, łatwości utrzymania oraz niezawodności programów.
+
+Pojawił się jako odpowiedź na problemy wynikające z chaotycznego używania instrukcji skoków bezwarunkowych typu "goto", które utrudniały analizę i rozwój.
+
+Cechy tego paradygmatu:
+
+- Brak lub silne ograniczenie instrukcji goto
+- Podział programu na procedury i funkcje
+- Hierarchiczną strukturę kodu (stos wywołań)
+- Modularność (każdy moduł (funkcja) realizuje określone zadanie)
+
+### Podstawowe struktury sterujące
+
+1. Strukura sekwencyjna (sekwencja)
+Instrukcje wykonwywane są jedna po drugiej w ustalonej kolejności.
+2. Struktura warunkowa (selekcja)
+Pozwala na wykonanie różnych fragmentów programu w zależności od spełnienia warunku.
+3. Struktura iteracyjna (pętla)
+Umożliwia wielokrotne wykonywanie tych samych instrukcji.
+
+### Zalety oraz ograniczenia programowanie strukturalnego
+
+Zalety:
+
+- Wysoka czytelność
+- Łatwe debugowanie
+- Dobra podstawa do nauki programowania
+- Logiczny przepływ sterowania
+
+Ogarniczenia:
+
+- Słabe wsparcie dla bardzo dużych systemów,
+- Brak naturalnego modelowania obiektów świata rzeczywistego,
+- Trudniejsza rozbudowa bez dodatkowych paradygmatów.
+
+Wszystkie ogarniczenia rozwiazane zostały przez inne paradygmaty dlatego też większość współczesnych języków jest wieloparadygmatowa.
+
+### Języki wykorzytujące ten paradygmat
+
+- C (jeżeli unikane jest goto)
+- Python (pisany tylko nieobiektowo lub wewnątrz metod)
+- Java (wewnątrz metod)
+
+Kontrprzykładem jest Asembler, który posiada pełne wsparcie skoków bezwarunkowych.
 
 ## 24. Metody kompresji stratnej obrazów i dźwięku
 
