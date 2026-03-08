@@ -1100,7 +1100,68 @@ Rozwiązanie: mechanizmy rozwiązywania konfliktów, mediacja, negocjacje.
 
 ## 20. Metody pozyskiwania danych przestrzennych
 
+### Dane przestrzenne
 
+Dane przestrzenne (geograficzne) to dane opisujące położenie, kształt oraz właściwości obiektów znajdujących się na powierzchni Ziemi lub w przestrzeni geograficznej. Umożliwiają one określenie, gdzie dany obiekt się znajduje oraz jakie posiada cechy.
+
+Dane przestrzenne są wykorzystywane głównie w systemach informacji geograficznej (GIS), kartografii, geodezji, planowaniu przestrzennym oraz nawigacji.
+
+### Przechowywanie danych przestrzennych
+
+W systemach informacji geograficznej (GIS) dane przestrzenne mogą być zapisywane w dwóch podstawowych modelach: rastrowym i wektorowym. Modele te określają sposób przedstawiania obiektów i zjawisk występujących na powierzchni Ziemi.
+
+#### Model rastrowy
+
+Model rastrowy przedstawia przestrzeń w postaci regularnej siatki komórek (pikseli). Każda komórka ma określony rozmiar i zawiera jedną wartość opisującą cechę danego fragmentu powierzchni. Dokładność danych jest ściśle powiązana z rodzielczością rastra.
+
+Zaletami tego rozwiązania jest prosta struktura danych, dobre odwzorowanie zjawisk ciągłych takich jak wysokość czy temperatura oraz łatwe wykonywanie analiz przestrzennych. Jednak przy dużej dokładności czyli przy wysokiej rozdzielczości pliki robią się bardzo duże, granice obiektów nie są idealnie odwzorowane ze względu na podział komórkowy oraz obiekty liniowe mają podobny problem jak granice.
+
+#### Model wektorowy
+
+Model wektorowy przedstawia obiekty przestrzenne za pomocą figur geometrycznych opisanych współrzędnymi. Podstawowymi elementami tego modelu są punkty, które reprezentują obiekty o małych rozmiarach. Linię, które reprezentują obiekty wydłużone przykładowo drogi czy linie energetyczne. Poligony (obszary), które reprezentują obiekty poiwerzchniowe przykładowo działki, czy granice administracyjne.
+
+Zaletami tego rozwiązania jest bardzo dokładne odwzorowanie kształtów obiektów i ich granic, mniejsze rozmiary plików przy danych obiektowych oraz łatwe powiązanie z bazą danych zawierającą atrybuty terenu. Jednak jest to bardziej złożona struktura danych, będąca bardziej skomplikowana do analizy powierzchniowej oraz przedstawienia zjawisk ciągłych.
+
+#### Porównanie modeli w tabelce
+
+| Cecha             | Model rastrowy                     | Model wektorowy                |
+| ----------------- | ---------------------------------- | ------------------------------ |
+| Sposób zapisu     | siatka komórek (piksele)           | punkty, linie, poligony        |
+| Typ zjawisk       | ciągłe (np. temperatura, wysokość) | obiekty o wyraźnych granicach  |
+| Dokładność granic | niższa                             | bardzo wysoka                  |
+| Rozmiar danych    | często duży                        | zwykle mniejszy                |
+| Zastosowania      | teledetekcja, modele terenu        | mapy geodezyjne, sieci drogowe |
+
+### Pozyskiwanie danych
+
+#### Pomiary terenowe (bezpośrednie)
+
+Polega na zbieraniu danych bezpośrednio w terenie przy użyciu specjalistycznych urządzeń pomiarowych. Znane też jako pomiary geodezyjne. Wykorzystują takie narzędzia jak tachimetry lub niwelatory. Cechują się bardzo wysoką dokładnością pomiaru i bezpośrednim kontaktem z obiektem mierzonym. Dane zwykle zapisywane sa jako dane wektorowe. Stosowane często w budownictwie lub kartografii.
+
+#### Systemy GNSS / GPS [^2]
+
+[^2]: GNSS - Global Navigation Satellite System - zbiór globalnych systemów nawigacji satelitarnej. Obejmuje amerykański GPS, europejski Galileo, rosyjski Glonass oraz chiński BeiDou, zapewniając większą dokładkość niż sam GPS.
+GPS - global positioning system - stworzony przez departamet obrony stanów zjednoczonych, system do wyzaczania położenia użytkownika i ułatwiania nawigacji.
+
+Globalne systemy satelitarne umożliwiające szybkie pozywskiwanie współżęnych. Cechują się szerokim zasięgiem działania, wysoką moblinością oraz relatywnie niskimi kosztami operacyjnymi. Ograniczone są przez warunki atmosferyczne, zakłucenia sygnałów czy przeszkody terenowe takie jak lasy czy budynki. Najczęściej wykorzystywane są do nawigacji.
+
+#### Fotogrametria
+
+Jest to technika pozyskiwania precyzyjnych informacji przestrzennych o obiektach i terenie na podstawie zdjęć (lotniczych, naziemnych, satelitarnych). Pozwala na zdalne tworzenie modeli 3D, ortofotomap [^3] i chmur punktów. Najczęsciej zapisywana w modelu rastrowym, ale jest możliwość stworzenia wektorywch danych. Wykorzystywana jest między innymi w geodezji, budownictwie i archeologii.
+
+[^3]: Ortofotomapa - cyfrowa (rastrowa) mapa powstała z przetworzonych zdjęć lotniczych lub satelitarnych, która dzięki specjalnej obróbce (ortorektyfikacji) eliminuje zniekształcenia i jest odwzorowana w rzucie ortogonalnym (prostopadłym do ziemi), co pozwala na precyzyjne pomiary odległości, powierzchni i kątów.
+
+#### Teledetekacja
+
+Technika pozyskiwania danych bazująca na bezkontaktowym zbieraniu informacji o obiektach, zjawiskach czy obszarach za pomocą sensorów umieszczonych na satelitach, samolotach czy dronach. Sensory (kamery, skanery, radary - mikrofalowe skanowanie, lidary - laserowe skanowanie) rejestrują promienowanie, które nie jest dostępne dla ludzkiego oka przykłądowo podczerwień. Co pozwala na wykrycie różnych cech obiektów. Zaletom tego rozwiązania zwykle jest wysoka precyzja w czasie rzeczywistym, jednak operacja z takim sprzętem wiąże się zwykle z dużymi kosztami uzyskania i potem przetwarzania danych. Przykładowo chmura punktów z LiDAR wymaga potężnych mocy obliczeniowych do dlaszego przetwarzania.
+
+#### Dane wtórne oraz digitalizacja
+
+Polega na pozyskiwaniu danych z istniejących źródeł, takich jak papierowe dokumenty czy mapy, lub rozproszone bazy danych zawierające informacje geograficzne. Recznie lub automatycznie digitalizowane są mapy oraz dokumenty fizyczne uzupełniając bądź tworząc nowe warstwy informacji w systemach GIS.
+
+### Aktualne podejście
+
+Współcześnie systemy GIS często łączą różne metody pozyskiwania oraz przechowywania danych przestrzennych, aby uzuskać peły oraz coraz bardziej dokładny obraz rzeczywistości.
 
 ## 21. Metody klasyfikacji obrazów satelitarnych
 
