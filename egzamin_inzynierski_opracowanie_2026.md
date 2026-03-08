@@ -169,7 +169,7 @@ Algorytmy bazujące na grafach:
 
 #### Tablicje asocjacyjne (hash table/map) (słowniki)
 
-Struktura przechowująca pary klucz–wartość, wykorzystująca funkcję haszującą do wyznaczania klucza/indeksu dla danych.
+Struktura przechowująca pary klucz-wartość, wykorzystująca funkcję haszującą do wyznaczania klucza/indeksu dla danych.
 
 Podstawowwe operacje na tablicy asocjacynej:
 
@@ -273,7 +273,7 @@ Największą siecią WAN jest Internet, zrzeszający miliardy urządzeń umożli
 1. Magistrala (bus) - wszystkie urządzenia są podłączone do jednego głównego kabla (tzw. magistrali lub szkieletu). Zaleta: łatwa budowa; Wada: awaria głównego kabla unieruchamia całą sieć.
 2. Topologia pierścienia (ring) - urządzenia są połączone w zamknięty okrąg. Dane krążą w jednym kierunku, a każde urządzenie działa jak wzmacniacz sygnału.
 3. Topologia siatki (mesh) - urządzenia są połączone ze sobą bezpośrednio na wiele sposobów. Wyróżniamy siatkę pełną (każdy z każdym) oraz częściową. Zapewnia wysoką bezawaryjność (redundancja połączeń).
-4. Topologia gwiazdy (star) - najpopularniejsza obecnie topologia LAN. Wszystkie urządzenia są połączone za pomocą kabli z jednym centralnym punktem dostępu – przełącznikiem (switch) lub koncentratorem (hub). Zaleta: awaria jednego kabla nie wpływa na inne stacje; Wada: awaria centralnego urządzenia wyłącza całą sieć.
+4. Topologia gwiazdy (star) - najpopularniejsza obecnie topologia LAN. Wszystkie urządzenia są połączone za pomocą kabli z jednym centralnym punktem dostępu - przełącznikiem (switch) lub koncentratorem (hub). Zaleta: awaria jednego kabla nie wpływa na inne stacje; Wada: awaria centralnego urządzenia wyłącza całą sieć.
 
 ##### Technologia
 
@@ -356,7 +356,7 @@ Nowoczesne sieci Ethernet wykorzystują miszane topologie działając w trybie f
 
 Sieci Wi-Fi nadal wykorzystują metodę CSMA/CA unikania kolizji i ich wydajność zależy od liczby urządzeń oraz ilości zakłuceń radiowych. W środowiskach o podwyższonej liczbie użytkowników metoda dostępu ma duży wpływ na jakość połączenia.
 
-## 6. Infrastruktura klucza publicznego – architektura oraz sposoby wykorzystania
+## 6. Infrastruktura klucza publicznego - architektura oraz sposoby wykorzystania
 
 ### Czym jest infrastruktura klucza publicznego (PKI - Public Key Infrastructure)
 
@@ -887,7 +887,7 @@ Aby interfejs był prosty i przyjazny w użyciu należy zadbać aby nie miał zb
 
 #### Pomoc w rozpoznawaniu i naprawianiu błędów (Help users recognize, diagnose, and recover from errors)
 
-Jeżeli pojawia się błąd należy go zakomunikować użytkownikowi jasno i prezejżyście w prostym języku oraz z sugestią rozwiązania. Zaleca się unikać informacji typu "Error 0x80004005" i zastępować je jasnym opisem: "Nie można zapisać pliku – brak uprawnień. Sprawdź ustawienia dostępu".
+Jeżeli pojawia się błąd należy go zakomunikować użytkownikowi jasno i prezejżyście w prostym języku oraz z sugestią rozwiązania. Zaleca się unikać informacji typu "Error 0x80004005" i zastępować je jasnym opisem: "Nie można zapisać pliku - brak uprawnień. Sprawdź ustawienia dostępu".
 
 #### Pomoc i dokumentacja (Help and documentation)
 
@@ -899,7 +899,7 @@ Interfejs użytkownika powinien być prosty oraz minimalistyczny. Powinien zawie
 
 ## 16. Techniki komunikacji międzyprocesowej
 
-### Komunikacja międzyprocesowa (IPC – Inter-Process Communication)
+### Komunikacja międzyprocesowa (IPC - Inter-Process Communication)
 
 Komunikacja międzyprocesowa to mechanizmy systemu operacyjnego umożliwiające wymianę danych oraz synchronizację między niezależnymi procesami. Procesy są izolowane w przestrzeni adresowej pamięci, dlatego IPC jest niezbędne do współpracy aplikacji. Główne cele IPC to przesyłanie danych, koordynacja pracy procesów, zapewnienie spójności i bezpieczeństwa oraz zwiększenie wydajności systemu wieloprocesowego.
 
@@ -1309,7 +1309,83 @@ Kontrprzykładem jest Asembler, który posiada pełne wsparcie skoków bezwarunk
 
 ## 24. Metody kompresji stratnej obrazów i dźwięku
 
+### Czym jest kompresja stratna?
 
+Kompresja stratna to technika redukcji rozmiaru plików multimedialnych (obrazów, dźwięków) poprzez usunięcie części informacji, które są mniej istotne dla ludzkiej percepcji. Stratna w tym przypadku ponieważ nieodwracalnie rezygnujemy z części danych, efektem zmniejszając rozmiar pliku.
+
+Wyróżniamy też kompresje bezstratną, która nie traci żadnych danych, jednak zmniejsza wielkość pliku nieznacznie.
+
+### Ograniczenia percepcji u człowieka
+
+Wzork człowieka jest bardzo precyzyjnym urządzeniem, jednak ma swoje ograniczenia. Składa się z około 120 milionów pręcików, które są wrażliwe na zmiany jasności, ale już tylko około 6 milionów czopków, które umożliwiają nam rozróżnianie kolorów. Z tego powodu ludzkie oko jest bardziej podatne na zmiany jasności niż koloru.
+
+Słuch człowieka podobnie wyłapuje ogrom informacji, jednak traci cześć z tych informacji w obecności innych. Przykładowo nie jest w stanie usłyszeć wysokich częstotliwości lub cichych dźwięków w obecności innych głośnych dźwięków.
+
+Kopresja danych wykorzystuje te ogarniczenia pozwalając na ucięcie niektórych informacji z ścieżek wideo bądź audio w celu zmniejszenia wielkości plików.
+
+### Metody kompresji stratnej obrazu
+
+- Redukcja dokładności kwantyzacji (Least Significant Bits Truncation) - obcinanie najmniej znaczących bitów reprezentujących kolor
+- Redukcja rozdzielczości (pruning) - zastępowanie grup pikseli jednym pikselem
+- Redukcja palety barw - zmniejszenie liczby dostępnych kolorów
+- Redukcja chrominancji (color subsampling) - konwersja RGB &rarr; YCbCr / YUV i zmniejszenie rozdzielczości informacji o kolorze
+- Transformacja kosinusowa (DCT) - przekształcenie bloków pikseli do domeny częstotliwościowej, zamienia informacje o położeniu pikseli na informacje o zmianach jasności, co pozwala łatwo usunąć mało istotne szczegóły obrazu.
+- Kwantyzacja - kluczowy etap stratny, zaokrąglanie współczynników po DCT
+- Kodowanie entropijne - dalsza redukcja rozmiaru poprzez wykrywanie powtarzających się wzorców (bezstratna część)
+
+#### Efekty uboczne kompresji obrazu
+
+- Artefakty blokowe
+- Utrata detali
+- Rozmycie krawędzi
+
+#### Etapy kompresji na przykładzie JPEG - Joint Photographic Experts Group
+
+**Kodowanie**:
+
+1. Wyizoluj informacje o kolorze. Problem, jeśli chodzi o format JPEG, polega na tym, że informacje o jasności obrazu są równomiernie rozłożone w kanałach R, G i B. Pamiętaj, że jasność jest ważniejsza niż kolor, więc będziemy chcieli izolować jasność na podstawie informacji o kolorze, dzięki czemu możemy zająć się tym osobno. Aby to zrobić, JPEG wykorzystuje pewne obliczenia matematyczne do konwersji obrazu z modelu kolorów z RGB do YCbCr. Obraz YCbCr również ma trzy kanały, ale przechowuje wszystkie informacje o jasności w jednym kanale (Y), dzieląc jednocześnie informacje o kolorze pomiędzy pozostałe dwa (Cb i Cr).
+2. Wyrzuć kilka informacji o kolorze. Zanim zajmiemy się czymkolwiek innym, JPEG usuwa część informacji o kolorze, zmniejszając tylko kanały Cb i Cr (kolor), zachowując jednocześnie pełny rozmiar ważnego kanału Y (jasność). Ściśle rzecz biorąc, ten krok jest opcjonalny.
+3. Konwersja do dziedziny częstotliwości. Aby wykorzystać drugą obserwację dotyczącą ludzkiej percepcji wzrokowej, zaczynamy od podzielenia każdego z kanałów Y, Cb i Cr na 8×8 bloków pikseli. Przekształcimy każdy z tych bloków z domeny przestrzennej do domeny częstotliwości. Wartość w lewym górnym rogu bloku będzie reprezentować informację o najniższej częstotliwości, a wartość w prawym dolnym rogu bloku będzie reprezentować informację o najwyższej częstotliwości. To transformacja domeny jest realizowana przy użyciu odrobiny matematycznej sztuczki zwanej 2D Dyskretna transformacja kosinusowa (DCT).
+4. Suwak jakości (kwantyzacja). Następnym krokiem jest selektywne usunięcie części informacji o częstotliwości. Jeśli kiedykolwiek zapisałeś obraz JPEG i wybrałeś wartość jakości, tutaj właśnie ten wybór wchodzi w grę. Działa to w ten sposób: zacznij od dwóch tabel liczb całkowitych 8×8, zwanych tabelami kwantyzacji. Jedna tabela zawiera informacje o jasności, a druga o kolorze. Liczby te zostaną użyte w każdym z bloków 8×8 w danych obrazu poprzez podzielenie wartości częstotliwości w danych obrazu przez odpowiadającą jej liczbę w tabeli kwantyzacji. Zatem lewy górny róg każdego bloku 8×8 w kanale częstotliwości Y zostanie podzielony przez liczbę w lewym górnym rogu tabeli kwantyzacji jasności i tak dalej. Wynik każdego podziału zaokrągla się do najbliższej liczby całkowitej, a części ułamkowe odrzuca się.
+5. Bezstratna kompresja danych. W postaci RLE [^5] albo Huffmana, w formie “zig-zag”. To wyświetla wartości dla każdego bloku 8×8 w zygzakowatym wzorze, który porządkuje liczby od najniższej częstotliwości do najwyższej. Oznacza to, że najbardziej skwantowane części (z największymi dzielnikami) znajdują się obok siebie, tworząc ładne, powtarzalne wzory małych liczb.
+
+[^5]: RLE (Run length encoding) to bardzo prosta metoda kompresji bezstratnej polegająca na zastępowaniu sekwencji powtarzających się wartości informacją o liczbie ich wystąpień. Zamiast zapisywać dane w postaci „AAAAAB”, zapisuje się je jako „5AB”. Metoda ta działa najlepiej wtedy, gdy w danych występują długie ciągi identycznych elementów (np. zera po kwantyzacji w JPEG), natomiast przy dużej zmienności sygnału nie daje znaczących oszczędności, a czasem może nawet zwiększyć rozmiar danych.
+
+**Dekodowanie**:
+
+1. Dekompresja. Pierwszym krokiem jest dekompresja skwantowanych (podzielonych i zaokrąglonych) danych częstotliwości. Ponieważ dane te zostały skompresowane bezstratnie, wynik będzie dokładnie taki sam, jak w kroku 5 powyżej.
+2. Rekonstrukcja na podstawie skwantowanych danych. Następnie musimy odwrócić proces kwantyzacji. Stosujemy tę samą procedurę co poprzednio, ale zamiast dzielić przez liczby w tabelach, mnożymy.
+3. Konwersja z powrotem do domeny przestrzennej. Gdy zrekonstruowaliśmy informacje o częstotliwości, musimy przekształcić je z powrotem z dziedziny częstotliwości do dziedziny przestrzennej. To nie problem. Transformata, której użyliśmy podczas kodowania, ma odwrotność to spełnia swoje zadanie.
+4. Wypełnij brakujące informacje o kolorze. Aby połączyć kanały z powrotem w jeden obraz, musimy skalować dwa kanały kolorów Cb i Cr z powrotem do ich pierwotnego rozmiaru. Ale informacje, które wyrzuciliśmy, zniknęły, więc będziemy musieli je przybliżyć interpolacja. Uzupełnimy brakujące piksele, biorąc średnią z otaczających pikseli, które nadal tam są.
+5. Konwersja z powrotem do RGB. W tym momencie mamy kompletny obraz, ale nadal znajduje się on w przestrzeni kolorów YCbCr, której komputer nie może wyświetlić bezpośrednio. Musimy przekształcić go z powrotem w przestrzeń kolorów RGB, od której zaczęliśmy.
+
+### Metody kompresji stratnej dźwięku
+
+- Podział sygnału na ramki - dzielenie sygnału audio na krótkie fragmenty czasowe
+- Transformacja do dziedziny częstotliwości - przekształcenie sygnału za pomocą FFT lub MDCT, uzyskanie informacji o amplitudach poszczególnych częstotliwości
+- Maskowanie psychoakustyczne - Usunięcie dźwięków, które są niesłyszalne w obecności innych, głośniejszych dźwięków.
+- Redukcja precyzji - zmniejszenie liczby bitów opisujących amplitudy częstotliwości
+- Kodowanie entropijne - redukcja rozmiaru poprzez wykrywanie powtarzających się wzorców (bezstratna część)
+
+#### Efekty uboczne kompresji dźwięku
+
+- zniekształcenia wysokich tonów
+- metaliczne brzmienie
+- utrata dynamiki sygnału
+
+#### Etapy kompresji na przykładzie MP3
+
+1. Podziel sygnał audio na ramki czasowe. Sygnał zapisany w postaci próbek PCM jest ciągły w czasie, dlatego na początku dzieli się go na krótkie fragmenty (ok. 25 ms). Dzięki temu można analizować lokalne właściwości dźwięku i przetwarzać każdą część niezależnie, co umożliwia adaptacyjną kompresję.
+2. Konwersja do dziedziny częstotliwości. Aby analizować zawartość widma, każda ramka jest przekształcana z domeny czasu do domeny częstotliwości przy użyciu banku filtrów oraz transformacji MDCT. Otrzymujemy zestaw współczynników opisujących energię w różnych zakresach częstotliwości.
+3. Podział na pasma częstotliwości. Widmo dźwięku dzieli się na podpasmowe zakresy odpowiadające czułości ludzkiego słuchu (np. kilkadziesiąt pasm). Skrajne lub słabo słyszalne zakresy mogą być redukowane, ponieważ mają niewielkie znaczenie percepcyjne.
+4. Model percepcji słuchu (maskowanie). Wykorzystywane są właściwości ludzkiego słuchu: silne dźwięki maskują słabsze w pobliżu częstotliwości oraz w czasie. Na tej podstawie obliczany jest próg słyszalności i określane są informacje, które mogą zostać uproszczone lub usunięte.
+5. Przydział bitów dla pasm. Każdemu pasmu częstotliwości przydziela się liczbę bitów proporcjonalną do jego znaczenia percepcyjnego — istotne pasma zachowują większą dokładność, mniej istotne są reprezentowane oszczędniej.
+6. Dostosowanie do ograniczeń przepływności. Całkowita liczba bitów dostępnych dla ramki jest ograniczona przez zadany bitrate (np. CBR - Constant Bitrate). Jeśli zapotrzebowanie jest większe, redukowana jest dokładność najmniej ważnych danych.
+7. Kwantyzacja (kompresja stratna). Współczynniki częstotliwościowe są skalowane i zaokrąglane, co powoduje utratę części informacji. Wykorzystywane są techniki takie jak maskowanie czasowe czy joint stereo, aby zmniejszyć ilość danych przy minimalnym wpływie na odbiór.
+8. Bezstratna kompresja danych. Skwantyzowane współczynniki są dodatkowo kodowane statystycznie (np. metodą Huffmana [^6]), co zmniejsza rozmiar danych bez dalszej utraty jakości.
+9. Pakowanie ramek w strumień MP3. Do każdej ramki dodawane są nagłówki zawierające informacje sterujące, a wszystkie ramki są łączone w końcowy strumień danych tworzący plik MP3.
+
+[^6]: Kodowanie Huffmana to bezstratna metoda kompresji statystycznej, która przypisuje krótsze kody bitowe częściej występującym symbolom, a dłuższe rzadkim. Na podstawie częstości występowania symboli budowane jest drzewo binarne, z którego wyznaczane są jednoznaczne (prefiksowe) kody. Dzięki temu średnia długość zapisu symbolu maleje, co redukuje rozmiar danych bez utraty informacji - technika ta jest powszechnie stosowana między innymi w JPEG i MP3 jako końcowy etap kompresji.
 
 ## 25. Rodzaje filtrów oraz ich zastosowanie w przetwarzaniu obrazów
 
