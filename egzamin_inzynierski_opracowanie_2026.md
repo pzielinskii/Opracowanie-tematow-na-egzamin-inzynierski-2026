@@ -1151,9 +1151,12 @@ Jest to technika pozyskiwania precyzyjnych informacji przestrzennych o obiektach
 
 [^3]: Ortofotomapa - cyfrowa (rastrowa) mapa powstała z przetworzonych zdjęć lotniczych lub satelitarnych, która dzięki specjalnej obróbce (ortorektyfikacji) eliminuje zniekształcenia i jest odwzorowana w rzucie ortogonalnym (prostopadłym do ziemi), co pozwala na precyzyjne pomiary odległości, powierzchni i kątów.
 
-#### Teledetekacja
+#### Teledetekcja
 
-Technika pozyskiwania danych bazująca na bezkontaktowym zbieraniu informacji o obiektach, zjawiskach czy obszarach za pomocą sensorów umieszczonych na satelitach, samolotach czy dronach. Sensory (kamery, skanery, radary - mikrofalowe skanowanie, lidary - laserowe skanowanie) rejestrują promienowanie, które nie jest dostępne dla ludzkiego oka przykłądowo podczerwień. Co pozwala na wykrycie różnych cech obiektów. Zaletom tego rozwiązania zwykle jest wysoka precyzja w czasie rzeczywistym, jednak operacja z takim sprzętem wiąże się zwykle z dużymi kosztami uzyskania i potem przetwarzania danych. Przykładowo chmura punktów z LiDAR wymaga potężnych mocy obliczeniowych do dlaszego przetwarzania.
+Technika pozyskiwania danych bazująca na bezkontaktowym zbieraniu informacji o obiektach, zjawiskach czy obszarach za pomocą sensorów umieszczonych na satelitach, samolotach czy dronach. Sensory (kamery, skanery, radary - mikrofalowe skanowanie, lidary - laserowe skanowanie) rejestrują promienowanie, które nie jest dostępne dla ludzkiego oka przykłądowo podczerwień. Co pozwala na wykrycie różnych cech obiektów. Zaletom tego rozwiązania zwykle jest wysoka precyzja w czasie rzeczywistym, jednak operacja z takim sprzętem wiąże się zwykle z dużymi kosztami uzyskania i potem przetwarzania danych. Przykładowo chmura punktów z LiDAR [^4] wymaga potężnych mocy obliczeniowych do dlaszego przetwarzania.
+
+[^4]: LiDAR - Light Detection and Ranging, działą na zasadzie radaru wykorzystując wiązki laserowe, pozwalając na dokładne określenie kształtów i odległosci.
+RaDAR - Radio Detection and Ranging.
 
 #### Dane wtórne oraz digitalizacja
 
@@ -1164,6 +1167,42 @@ Polega na pozyskiwaniu danych z istniejących źródeł, takich jak papierowe do
 Współcześnie systemy GIS często łączą różne metody pozyskiwania oraz przechowywania danych przestrzennych, aby uzuskać peły oraz coraz bardziej dokładny obraz rzeczywistości.
 
 ## 21. Metody klasyfikacji obrazów satelitarnych
+
+Klasyfikacja obrazów satelitarnych polega na przypisywaniu pikselom obrazu określonych klas tematycznych na podstawie ich właściwości spektralnych. Dzięki temu możliwe jest rozpoznanie różnych typów pokrycia terenu, takich jak lasy, woda, zabudowa czy pola uprawne. Obrazy satelitarne składają się z wielu pikseli, z których każdy zawiera informację o odbitym promieniowaniu w różnych zakresach spektrum elektromagnetycznego. Analiza tych wartości pozwala określić, jaki typ powierzchni reprezentuje dany piksel.
+
+### Podział metod klasyfikacji
+
+- Klasyfikacja nadzorowana - wymaga danych treningowych dla algorytmów rozpoznawania.
+- Klasyfikacja nienadzorowana - algorytm rozpoznawania działa bez danych treningowych.
+- Klasyfikacja obiektowa - analiza grup pikseli tworzących obiekty zamiast pojedyńczych pikseli.
+
+#### Klasyfikacja nadzorowana
+
+Klasyfikacja nadzorowana polega na tym, że użytkownik wskazuje przykładowe obszary należące do określonych klas pokrycia terenu. Na tej podstawie algorytm uczy się rozpoznawać podobne piksele na całym obrazie.
+
+Przykładowe algorytmy działające na podstawie danych testowych od użytkownika to metoda największego prawdopodobieństwa (maximum likelihood) i minimalna odległość (minimum distance).
+
+Zaletami tego rozwiązania jest większa kontrola nad wynikiem klasyfikacji oraz wyższa dokładność jednak wymaga przygotwania danych treningowych i wiedzy o analizowanym obszarze.
+
+#### Klasyfikacja nienadzorowana
+
+Klasyfikacja nienadzorowana polega na automatycznym grupowaniu pikseli o podobnych właściwościach spektralnych bez wcześniejszego wskazywania klas przez użytkownika. Algorytm sam tworzy grupy pikseli (tzw. klastry), które następnie są interpretowane przez użytkownika.
+
+Przykładowe algorytmy stosowane w tej klasyfikacji to K-means oraz ISODATA.
+
+Zaletami tego rozwiązania jest brak potrzeby danych treningowych i szybkie przetwarzanie dużych zbiorów danych, jednak klasy powstałe w wyniku tej analizy nie zawsze odpowiadają rzeczywistości i wymagają dodatkowej interpretacji przez użytkownika.
+
+#### Klasyfikacja obiektowa
+
+W klasyfikacji obiektowej najpierw przeprowadza się segmentację obrazu na jednorodne obiekty, a następnie klasyfikuje się całe obiekty zamiast pojedynczych pikseli. Wykorzystuje się nie tylko cechy spektralne, ale również teksturę, kształt czy relacje przestrzenne. Podejście to jest szczególnie efektywne przy obrazach wysokiej rozdzielczości, na przykład z satelitów takich jak Sentinel-2 czy Landsat 8.
+
+Zaletami tego rozwiązania jest lepsza interpretacja złożonych struktur i redukcja szumów, jednak wymaga to segmentacji obrazu oraz jest bardziej złożona obliczeniowo.
+
+#### Uczenie głębokie / maszynowe
+
+Obecnie coraz większe zainteresowanie mają metody oparte na uczeniu maszynowym, wykorzystujące sieci neuronowe, które automatycznie uczą się relacji klas z danymi.
+
+Zaletą tego rozwiązania jest wysoka skuteczność automatycznego klasyfiktowania, jednak wymaga dużych zbiorów danych w celu nauki oraz znaczynhcb zasobów obliczeniowych.
 
 ## 22. Zastosowania formalizmu i metod teorii grafów
 
