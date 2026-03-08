@@ -1206,8 +1206,66 @@ Zaletą tego rozwiązania jest wysoka skuteczność automatycznego klasyfiktowan
 
 ## 22. Zastosowania formalizmu i metod teorii grafów
 
+### Teoria grafów
+
+Teoria grafów to dział matematyki i informatyki badający struktury składające się z wierzchołków (ang. vertices) oraz krawędzi (edges) łączących te wierzchołki zwanych grafami.
+
+#### Podstawowe typy grafów
+
+- grafy proste - brak pętli (krawędzi prowadzącej do tego samego wierzchołka), brak krawędzi wielokrotnych
+- multigrafy (grafy złożone) - może zawierać pętle, może zawierać krawędzie wielokrotne
+- grafy skierowane - kierunek krawędzi ma znaczenie
+- grafy nieskierowane - kierunek krawędzi nie jest oznaczony (nie ma znaczenia)
+- grafy ważone - krawędzie mają przypisane wagi (koszty, odległości)
+- grafy nieważone - krawędzie nie mają przypisanych wag
+- grafy cykliczne - zawierają w sobie cykle (zamknięta droga taka że ostatni wierzchołek jest tym samym co pierwszy)
+- grafy acykliczne - nie posiadające cyklu
+- drzewa - specjalny rodzaj grafu acyklicznego
+- grafy spójne - każda para wierzchołków jest połączona jakąś scieżką
+- grafy niespójne - nie każda para wierzchołków posiada ścieżkę
+
+### Formalizm grafów
+
+Formalizm w teorii grafów to sposób przedstawiania rzeczywistych sytuacji za pomocą abstrakcyjnych struktur, takich jak zbiory punktów (wierzchołków) i łączących je linii (krawędzi). Pozwala na modelowanie relacji, analizę zależności i optymalizację rozwiązań.
+
+### Metody teorii grafów
+
+Metody to systematyczne procedury i algorytmy opracowane w celu rozwiązywania konkretnych problemów optymalizacyjnych i strukturalnych w tych grafach. Kluczową cechą dobrych metod (algorytmów) jest ich efektywność, co oznacza, że liczba kroków potrzebnych do rozwiązania problemu jest ograniczona funkcją wielomianową względem liczby wierzchołków i krawędzi.
+
+### Zastosowania
+
+#### Nawigacja
+
+Tutaj grafy formalizują problemy nawigacji między wieloma miastami, skrzyżowaniami (wierzchołkami) czy innymi punktami i ich połączeniami (krawędziami). Wykorzytując grafy skierowane, nieskierowane, i często ważone. Pojawia się tutaj znany problem najkrótszej ścieżki między dwoma wierzchołkami, dokładniej przy grafach ważonych tam gdzie suma wag krawędzi jest minimalna.
+
+Znanymi metodami rozwiązującymi te problemy jest algorytm Dijkstry, który krokowo buduje drzewo najkrótszych ścieżek, etykietując wierzchołki ich aktualną odległością od źródła. Bardziej zaawansowaną wersją jest algorytm A*, który wykorzystuje heurystykę (szacowanie pozostałego dystansu), aby przeszukiwać graf bardziej efektywnie w kierunku celu.
+
+Przykład systemów wykorzystujących takie rozwiązania aktualnie jest to Google Maps, które korzysta głównie z algorytmu A* jednak nie wykluczając algorytmu Dijkstry. System przetwarza miliony danych w czasie rzeczywistym uzwlędniając ruch drogowy oraz historyczne wzorce, ważąc trasy pod kątem czasu przejazdu.
+
+#### Sieci komputerowe
+
+Formalizując sieci komputerowe na grafach definujemy urządzenia jako wierzchołki i krąwędzie jako połączenia sieciowe między nimi. Wykorzystywane są tutaj grafy nieskierowane do modelowania połączeń fizycznych. Grafy skierowane do modelowania przepływów danych. Grafy ważone jako kolejny etap przykładowo fizycznych połączeń, gdzie waga jest opóźnieniem, odległością, kosztem przesyłu. Wykorzystywane są tutaj również drzewa w takich protokołach jak STP (Spanning Tree Protocol), aby eliminować pętle w sieciach Ethernet.
+
+Znanymi metodami używanymi w sieciach jest również algorytm Dijkstry wykorzystywany w protokołach RIP oraz OSPF, aby znajdować najkrótsze ścieżki połączeń fizycznych między dwoma użądzeniami. Wykorzystywane są również algorytmy znajdujące minimalne drzewa rozpinające takie jak Kruskal czy Prim do zapobiegania cyklom.
+
+Przykładami systemów wykrorzystujących te roziwązania w sieciach to przełączniki (switch) w sieciach komputerowych gdzie wykorzystywane są algorytmy minimalnych drzew rozpinających jako protokół STP czy jego rozwinięcia. Kolejnym przykładem są routery gdzie wykorzystywane są algorytmy najkrótszych scieżek w protokołach RIP oraz OSFP.
+
+#### Relacje społeczne
+
+Relacje społeczne można formalizować z wykorzystaniem grafów. Osoby stają się wierzchołkami a relacja jest krawędzią. Stopień wierzchołka jest liczbą znajomych takiej osoby a ścieżki pozwalają zdefiniować znajomych znajomych i definiować osobiste sieci kontaktów.
+
+#### Oddzielanie substacji chemicznych, które reagują między sobą w magazynie
+
+Firma chemiczna musi przechowywać substancje w przedziałach tak, aby niekompatybilne związki (które mogłyby wybuchnąć przy kontakcie) znajdowały się osobno. Buduje się graf, gdzie wierzchołkami są chemikalia, a krawędzie łączą te, które ze sobą reagują. Liczba chromatyczna tego grafu określa minimalną liczbę bezpiecznych przedziałów potrzebnych w magazynie. Formalizm kolorowania grafów tutaj był pomocny.
+
 ## 23. Paradygmat programowania strukturalnego
+
+
 
 ## 24. Metody kompresji stratnej obrazów i dźwięku
 
+
+
 ## 25. Rodzaje filtrów oraz ich zastosowanie w przetwarzaniu obrazów
+
+
