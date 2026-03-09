@@ -41,16 +41,16 @@ Najprościej mówiąc, jest to rodzaj funckji otrzymany po wyznaczeniu liczby op
 
 Złożoności posortowane od najszybszej
 
-|Klasa           |Opis złożoności      |Przykładowy algorytm w klasie                                  |
-|-----------     |---------------------|---------------------------------------------------------------|
-|$$O(1)$$        |Stała                |Dostęp do elementu tablicy                                     |
-|$$O(log_{n})$$  |Logarytmiczna        |Wyszukiwanie binarne [^1]                                      |
-|O(n)            |Liniowa              |Przeszukanie tablicy element po elemencie                      |
-|$$O(nlog_{n})$$ |Liniowo-logarytmiczna|Algorytmy typu dziel i zwyciężaj (merge sort)                  |
-|$$O(n^{2})$$    |Kwadratowa           |Bubble sort (wynika z zagnieżdżenia dwóch pętli)               |
-|$$O(n^{3})$$    |Sześcienna           |Mnożenie macieży 2-wymiarowych                                 |
-|$$O(2^{n})$$    |Wykładnicza          |Problem wież Hanoi (przeniesienie n krążków to 2^n^ - 1 ruchów)|
-|$$O(n!)$$       |Silnia               |Generowanie permutacji zbioru                                  |
+|Klasa           |Opis złożoności      |Przykładowy algorytm w klasie                                     |
+|-----------     |---------------------|---------------------------------------------------------------   |
+|$$O(1)$$        |Stała                |Dostęp do elementu tablicy                                        |
+|$$O(log_{n})$$  |Logarytmiczna        |Wyszukiwanie binarne [^1]                                         |
+|O(n)            |Liniowa              |Przeszukanie tablicy element po elemencie                         |
+|$$O(nlog_{n})$$ |Liniowo-logarytmiczna|Algorytmy typu dziel i zwyciężaj (merge sort)                     |
+|$$O(n^{2})$$    |Kwadratowa           |Bubble sort (wynika z zagnieżdżenia dwóch pętli)                  |
+|$$O(n^{3})$$    |Sześcienna           |Mnożenie macieży 2-wymiarowych                                    |
+|$$O(2^{n})$$    |Wykładnicza          |Problem wież Hanoi (przeniesienie n krążków to $$2^n - 1$$ ruchów)|
+|$$O(n!)$$       |Silnia               |Generowanie permutacji zbioru                                     |
 
 [^1]: Znalezienie konktretnego elementu w posortowanej tablicy. Przykładowo sprawdzanie środkowego elementu tablicy następnie szukanie w jednej z połówek i tak do uzyskania szukanego elementu.
 
@@ -760,7 +760,7 @@ Oprócz powyższego mechanizmu znany jest również multilevel feedback queue po
 ## 12. Modele barw w grafice komputerowej
 
 Model barw to matematyczny sposób opisu koloru za pomocą zestawu liczb (składowych).
-Definiuje on, jak reprezentować kolor w systemie komputerowym lub urządzeniu. Kolor w informatyce nie jest „barwą” samą w sobie — jest wektorem liczb w określonej przestrzeni. Różne modele barw są używane w różnych kontekstach, takich jak wyświetlanie na ekranie, drukowanie czy przetwarzanie obrazów.
+Definiuje on, jak reprezentować kolor w systemie komputerowym lub urządzeniu. Kolor w informatyce nie jest „barwą” samą w sobie - jest wektorem liczb w określonej przestrzeni. Różne modele barw są używane w różnych kontekstach, takich jak wyświetlanie na ekranie, drukowanie czy przetwarzanie obrazów.
 
 ### Model RGB (Red, Green Blue)
 
@@ -1379,7 +1379,7 @@ Kopresja danych wykorzystuje te ogarniczenia pozwalając na ucięcie niektórych
 2. Konwersja do dziedziny częstotliwości. Aby analizować zawartość widma, każda ramka jest przekształcana z domeny czasu do domeny częstotliwości przy użyciu banku filtrów oraz transformacji MDCT. Otrzymujemy zestaw współczynników opisujących energię w różnych zakresach częstotliwości.
 3. Podział na pasma częstotliwości. Widmo dźwięku dzieli się na podpasmowe zakresy odpowiadające czułości ludzkiego słuchu (np. kilkadziesiąt pasm). Skrajne lub słabo słyszalne zakresy mogą być redukowane, ponieważ mają niewielkie znaczenie percepcyjne.
 4. Model percepcji słuchu (maskowanie). Wykorzystywane są właściwości ludzkiego słuchu: silne dźwięki maskują słabsze w pobliżu częstotliwości oraz w czasie. Na tej podstawie obliczany jest próg słyszalności i określane są informacje, które mogą zostać uproszczone lub usunięte.
-5. Przydział bitów dla pasm. Każdemu pasmu częstotliwości przydziela się liczbę bitów proporcjonalną do jego znaczenia percepcyjnego — istotne pasma zachowują większą dokładność, mniej istotne są reprezentowane oszczędniej.
+5. Przydział bitów dla pasm. Każdemu pasmu częstotliwości przydziela się liczbę bitów proporcjonalną do jego znaczenia percepcyjnego - istotne pasma zachowują większą dokładność, mniej istotne są reprezentowane oszczędniej.
 6. Dostosowanie do ograniczeń przepływności. Całkowita liczba bitów dostępnych dla ramki jest ograniczona przez zadany bitrate (np. CBR - Constant Bitrate). Jeśli zapotrzebowanie jest większe, redukowana jest dokładność najmniej ważnych danych.
 7. Kwantyzacja (kompresja stratna). Współczynniki częstotliwościowe są skalowane i zaokrąglane, co powoduje utratę części informacji. Wykorzystywane są techniki takie jak maskowanie czasowe czy joint stereo, aby zmniejszyć ilość danych przy minimalnym wpływie na odbiór.
 8. Bezstratna kompresja danych. Skwantyzowane współczynniki są dodatkowo kodowane statystycznie (np. metodą Huffmana [^6]), co zmniejsza rozmiar danych bez dalszej utraty jakości.
