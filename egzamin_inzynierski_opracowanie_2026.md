@@ -62,7 +62,7 @@ Typ prymitywny (prosty) &rarr; przechowuje jedną wartość.
 
 Struktura danych &rarr; organizuje wiele wartości oraz definiuje operacje, które można na nich wykonywać.
 
-UUżycie odpowiedniej struktury danych i algorytmu umożliwia optymalizację czasową, i pamięciową. Każda struktura danych ma swoje zalety i wady, a jej wybór ma kluczowe znaczenie dla wydajności algorytmów.
+Użycie odpowiedniej struktury danych i algorytmu umożliwia optymalizację czasową, i pamięciową. Każda struktura danych ma swoje zalety i wady, a jej wybór ma kluczowe znaczenie dla wydajności algorytmów.
 
 ### Przykładowe struktury danych
 
