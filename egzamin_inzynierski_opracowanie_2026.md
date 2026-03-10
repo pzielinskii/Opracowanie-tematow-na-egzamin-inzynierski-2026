@@ -197,8 +197,11 @@ Programowanie obiektowe (OOP - object orientet programing) to paradygmat program
 #### Filary programowania obiektowego
 
 Abstrakcja - Ukrywanie złożoności obiektów poprzez defioniowanie interfejsów oraz klas.
+
 Enkapsulacja (hermertyzacja) - Ograniczanie dostępu do danych obiektu, dostęp jedynie przez publiczne interfejsy. Kontrola oraz bezpieczństwo stanów.
+
 Dziedziczenie - Tworzenie nowych klas na bazie istniejących, dziedzicząc ich metody oraz własności. Rozszerzalność funkcjonalności oraz współdzielenie kodu.
+
 Polimorfizm - Możliwość użycia tych samych metod / zachowań dla różnych kontekstów.
 
 #### Minusy / ograniczenia programowania obiektowego
@@ -371,7 +374,7 @@ Infrastruktura klucza publicznego to zbiór technologii, procedur i polityk słu
 4. Certyfikat cyfrowy - Dokument elektroniczny łączący tożsamość z kluczem publicznym, podpisany przez CA.
 
 Jest wiele urzędów certyfikacji oraz jeden nazywany głownym Root CA. Przeglądarki internetowe posiadają wbudowane listy urzędow certyfikacji.
-Najczęsciej stotsowanym standardem certyfikatu jest X.509, standart ten wymusza zawarcie danych właściciela, klucza publicznego, oresu ważności certyfikatu oraz podpisu cyfrowego CA.
+Najczęsciej stotsowanym standardem certyfikatu jest X.509, standard ten wymusza zawarcie danych właściciela, klucza publicznego, oresu ważności certyfikatu oraz podpisu cyfrowego CA.
 
 #### Zastosowania PKI
 
