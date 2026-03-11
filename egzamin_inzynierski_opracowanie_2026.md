@@ -1400,4 +1400,77 @@ Kopresja danych wykorzystuje te ogarniczenia pozwalając na ucięcie niektórych
 
 ## 25. Rodzaje filtrów oraz ich zastosowanie w przetwarzaniu obrazów
 
+### Czym jest filtr obrazu?
 
+Filtr w przetwarzaniu obrazów to operacja, która modyfikuje wartość pikseli, na podstawie ich sąsiedztwa (zazwyczaj maska 3x3 - bierzemy 8 sąsiednich pixeli a modyfikowany pixel ma pozycję 1,1), w celu poprawy jakości lub wydobycia informacji.
+
+np. Redukcja szumu, wygładzenie, wyostrzenie, detekcja krawędzi
+
+### Rodzaje filtrów
+
+Filtry dzielimy na
+
+- Liniowe (dla każdego piksela wynikowego obliczana jest ważona suma wartości pikseli wejściowych)
+- Nieliniowe (na podstawie wartości pikseli wejściowych stosowane są operacje nieliniowe, np. mediana)
+- Filtry w dziedzinie częstotliwości (operacje na transformaty obrazu, np. FFT)
+- Filtry specjalistyczne (dedykowane do konkretnych zadań, np. detekcja krawędzi, morfologia)
+
+### Filtry liniowe
+
+#### Dolnoprzepustowe
+
+- Usuwają wysokie częstotliwości (szumy)
+- Przykłady: filtr uśredniający, filtr Gaussa
+
+#### Górnoprzepustowe
+
+- Wzmacniają wysokie częstotliwości (detekcja krawędzi)
+- Przykłady: filtr Laplace'a, filtr Sobela
+
+### Filtry nieliniowe
+
+#### Filtr medianowy
+
+- Zastępuje wartość piksela medianą wartości w jego sąsiedztwie
+- Skuteczny w usuwaniu szumu impulsowego (salt-and-pepper)
+
+#### Filtr morfologiczny
+
+- Operacje na strukturach kształtów w obrazie
+- Przykłady: dylatacja, erozja, otwarcie, zamknięcie
+
+### Filtry specjalistyczne
+
+#### Filtr Sobela
+
+- Detekcja krawędzi w poziomie i pionie
+
+#### Filtr Laplace'a
+
+- Wykrywanie obszarów o dużych zmianach jasności (krawędzie)
+
+#### Morfologia matematyczna
+
+- Operacje na obrazach binarnych i skalarnych
+
+### Filtry w dziedzinie częstotliwości
+
+Górnoprzepustowy i dolnoprzepustowy tylko w dziedzinie częstotliwości
+
+### Zastosowania filtrów
+
+- grafice komputerowej
+- wizji komputerowej
+- obrazowaniu medycznym
+- teledetekcji
+- monitoringu i OCR.
+
+### Tabelka porównawcza
+
+| Filtr        | Typ         | Zastosowanie      |
+| ------------ | ----------- | ----------------- |
+| Uśredniający | liniowy     | wygładzanie       |
+| Gaussa       | liniowy     | redukcja szumu    |
+| Medianowy    | nieliniowy  | szum impulsowy    |
+| Laplace’a    | liniowy     | wyostrzanie       |
+| Sobel        | krawędziowy | detekcja krawędzi |
