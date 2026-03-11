@@ -506,12 +506,19 @@ Następnie po zakończeniu tej fazy zespół testerski rozpoczyna testy od najmn
 Jest to model bazujący na cyklach, iteracjach. Każda iteracja powinna dostarczać działjącą część systemu. System dzięki temu powstaje stopniowo. Zwiększa to jednak złożoność planowania i zarządzania takim projektem. Jednak umożliwia dostosowywanie się do zmiennych lub niejasnych wymagań systemowych, zapewnia wczesne testowanie każdej iteracji i zmniejsza ryzyko projektowe.
 
 Wizulalizacja działania:
+
 Przyrost 1: Plan &rarr; Design &rarr; Develop &rarr; Test &rarr; Działający inkrement / przyrost v1
+
 &darr;
+
 Przyrost 2: Plan &rarr; Design &rarr; Develop &rarr; Test &rarr; Działający inkrement / przyrost v2
+
 &darr;
+
 ...Konytuacja aż system zostanie ukończony...
+
 &darr;
+
 Produkt końcowy - w pełni działjący system spełniający wszystkie wcześniejsze wymagania
 
 #### Model zwinny (agile, scrum)
